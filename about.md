@@ -12,7 +12,7 @@ I guess I could currently call myself a junior full-stack developer. I like deve
 
 I could've listed all the languages/techniques I knew here, but that would be too many, and none of them is what I really really really proficient in, so that's pointless. Saying you know everything is saying you know nothing, after all. But I would say I can build you a whole website or a web-based application. (Pay me so I can do your coding assignments for you. Lol, jk)
 
-Please follow me on Github and star my repos, lol.
+Please follow me on Github and star my repos, thanks lol.
 
 ### Okay so you want know more about me??
 
