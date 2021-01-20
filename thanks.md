@@ -6,4 +6,4 @@ excerpt:
 comments: false
 ---
 
-Thanks for come to my blog, I hope you enjoy the content. Have a good one!
+Thanks for coming to my blog, I hope you enjoy the content. Have a good one!
