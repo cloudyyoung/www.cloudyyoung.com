@@ -30,7 +30,7 @@ I would like to know some philosophy and psychology. They make you see the world
 
 The way I think is more graphical than logical. Under unexpected circumstances I would easily get emotional, which is a weakness that I should overcome. I'm trying to be more logical so it can balence the graphical. Not scientifically proved at all, but in people's word, I'm right-brain dominated.
 
-I enjoy arts. I like things that are aesthetic, and I enjoy creating things that are aesthetic. I enjoy designing UI and UX, my projects has to have that aesthetic looking.  
+I enjoy arts. I like things that are aesthetic, and I enjoy creating things that are aesthetic. I enjoy designing UI and UX, my projects have to have that aesthetic looking.  
 
 I have some sort of perfectionism, and I'm working on it too. 
 
