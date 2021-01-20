@@ -14,7 +14,7 @@ I could've listed all the languages/techniques I knew here, but that would be to
 
 Please follow me on Github and star my repos, thanks lol.
 
-### Okay so you want know more about me??
+### Okay so you want to know more about me??
 
 Then you're going to read something that's totally from my self-awareness. You don't have to, if you're not interested at all. Correct me if I know wrong about myself, I want to know more too.
 
