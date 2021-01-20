@@ -32,7 +32,7 @@ I'm thinking more graphically than logically. Under unexpected circumstances I w
 
 I enjoy arts. I like things that are aesthetic. I enjoy designing UI and UX because I want my projects to have that aesthetic looking as well. 
 
-I'm have some sort of perfectionism, and I'm working on it too. 
+I have some sort of perfectionism, and I'm working on it too. 
 
 Keep updating...
 
