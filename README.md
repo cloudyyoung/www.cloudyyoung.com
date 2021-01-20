@@ -1,1 +1,1 @@
-> I don't like writings. Do I really have anything to share? LOL
+> I don't like writing. Do I really have anything to share? LOL
