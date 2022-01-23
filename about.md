@@ -24,7 +24,7 @@ I'm also passive on making friends, so I don't have many friends. Kinda lonely b
 
 I listen to music a lot. A lot. When I code I wear headphones, when I walk I wear headphones, when I eat I wear headphones, and when I sleep I wear headphones. I mostly listen to electronic dance music (EDM) and pop music, something alone those lines, but I would still say I have a niche taste compare to my friends, not the genre but the artist though, because none of my friends listen to what I listen, sadly. Just appreciating different music. I might share a playlist of my favourite ones, I know nobody cares but I just post them for fun.
 
-My classmate from high school once said I'm a potential gay. I mean, it's not wrong, attractive humans are attractive regardless of the gender, every boy is a potential gay and every girl is a potential lesbian, there's nothing wrong with any sexual orientation. But first of all, I'll be faithful to my girlfriend.
+My classmate from high school once said I'm a potential gay. I mean, it's not wrong, attractive humans are attractive regardless of the gender, every boy is a potential gay and every girl is a potential lesbian, there's nothing wrong with any sexual orientation.
 
 I would like to know some philosophy and psychology. They make you see the world differently and make you think, aren't they.
 
