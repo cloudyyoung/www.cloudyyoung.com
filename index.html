@@ -20,6 +20,44 @@
             font-family: 'Space Grotesk', sans-serif;
             overflow: hidden;
         }
+
+        .video {
+            animation-name: pulse;
+            animation-duration: 10.0s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.95;
+            }
+
+            10% {
+                opacity: 1.0;
+            }
+
+            45% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1.0;
+            }
+
+            75% {
+                opacity: 0.84;
+            }
+
+            80% {
+                opacity: 1.0;
+            }
+
+            100% {
+                opacity: 0.95;
+            }
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -30,13 +68,13 @@
 <body>
     <div class="grid h-screen place-items-center">
         <div>
-            <div class="w-full md:w-96">
+            <div class="w-full md:w-96 transition-all video">
                 <video autoplay muted loop>
                     <source src="bg.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div class="text-white/92 text-2xl md:text-3xl text-center font-light type mt-8 -mb-14 h-20"></div>
+            <div class="text-white/92 text-2xl md:text-3xl text-center font-light type mt-8 -mb-10 h-20"></div>
         </div>
     </div>
     <script>
