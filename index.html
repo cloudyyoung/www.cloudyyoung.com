@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+        :root {
+            --ti-cursor-color: #c4edff;
+            --ti-cursor-font-family: 'Space Grotesk', sans-serif;
+            --ti-cursor-transform: translate(0.05rem, 0.15rem);
+            --ti-cursor-font-weight: 600;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow: hidden;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+</head>
+
+<body>
+    <div class="absolute top-0 bottom-0 right-0 left-0 grid h-screen place-items-center">
+        <video class="w-96 h-96 -mt-12" autoplay muted loop>
+            <source src="bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </div>
+    <div class="text-white/92 text-3xl text-center absolute bottom-0 w-full font-light type mb-20"></div>
+    <script>
+        new TypeIt(".type", {
+            lifeLike: true,
+            speed: 100,
+            loop: true,
+            cursorChar: '_',
+        })
+            .type("<span class='font-medium leading-10 name'>Yunfan Yang</span><br>")
+            .pause(1500)
+
+            .type("<span class='pronoun'>He / Him</span>")
+            .pause(1500)
+            .delete(".pronoun")
+
+            .type("<span class='cs'>Computer Science</span>")
+            .pause(1500)
+            .delete(".cs")
+
+            .type("<span class='seng'>Software Engineering</span>")
+            .pause(1500)
+            .delete(".seng")
+
+            .type("<span class='data'>Data Science</span>")
+            .pause(1500)
+            .delete(".data")
+
+            .type("<span class='personality'>INTP / ISTP</span>")
+            .pause(1500)
+            .delete(".personality")
+
+            .type("<span class='kolbe'>4-6-4-6</span>")
+            .pause(1500)
+            .delete(".kolbe")
+
+            .type("<span class='uiux'>UI / UX Design</span>")
+            .pause(1500)
+            .delete(".uiux")
+
+            .type("<span class='web-app'>Web Application</span>")
+            .pause(1500)
+            .delete(".web-app")
+
+            .type("<span class='ml'>Machine Learning</span>")
+            .pause(1500)
+            .delete(".ml")
+
+            .delete()
+            .pause(800)
+
+            .type("<span class='font-medium leading-10 name'>Cloudy Young</span><br>")
+            .pause(600)
+            .type("is me as well ;)")
+            .pause(1500)
+
+            .delete()
+            .pause(1000)
+
+            .go();
+    </script>
+</body>
+
+</html>
