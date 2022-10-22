@@ -46,9 +46,10 @@
             loop: true,
             cursorChar: '_',
         })
-            .type("<span class='font-medium name'>Yunfan Yang</span><br>")
+            .type("<span class='font-medium name'>Yunfan Yang</span>")
             .pause(1500)
 
+            .type("<br>")
             .type("<span class='cs'>Computer Science</span>")
             .pause(1500)
             .delete(".cs")
@@ -89,15 +90,16 @@
             .pause(1500)
             .delete(".ml")
 
-            .delete()
+            .empty()
             .pause(800)
 
-            .type("<span class='font-medium leading-10 name'>Cloudy Young</span><br>")
-            .pause(600)
-            .type("is me as well ;)")
+            .type("<span class='font-medium leading-10 name'>Cloudy Young</span>")
+            .pause(200)
+            .type("<br>")
+            .type("is also me ;)")
             .pause(1500)
 
-            .delete()
+            .empty()
             .pause(1000)
 
             .go();
