@@ -29,8 +29,6 @@
             animation-iteration-count: infinite;
             animation-play-state: running;
             box-shadow: inset 200px 200px 100px 2000px #000000;
-            overflow: hidden;
-            border-radius: 9999px;
         }
 
         @keyframes pulse {
@@ -72,12 +70,13 @@
 <body>
     <div class="grid h-screen place-items-center">
         <div>
-            <div class="w-full md:w-96 video">
+            <div class="w-full md:w-96 hidden md:block rounded-full overflow-hidden">
                 <video autoplay muted loop>
                     <source src="bg.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
+            <img src="bg.gif" class="w-full md:w-96 md:hidden rounded-full overflow-hidden video">
             <div class="text-white/92 text-2xl md:text-3xl text-center font-light type mt-8 -mb-10 h-20"></div>
         </div>
     </div>
