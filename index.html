@@ -134,6 +134,24 @@
             background-repeat: no-repeat;
             background-size: contain;
         }
+
+        .menu .text {
+            overflow: hidden;
+        }
+
+        .menu.activated .text p {
+            animation: slide-up 1.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -179,39 +197,67 @@
             <div class="w-4xl max-w-4xl m-auto pt-32 px-10 md:p-24 text-gray-900 text-xl">
                 <div class="avatar rounded-full h-20 w-20 md:h-24 md:w-24 -ml-0.5"></div>
                 <div class="mt-8 md:mt-12">
-                    <div class="text-3xl md:text-4xl font-bold">YUNFAN, YANG</div>
+                    <div class="text-3xl md:text-4xl font-bold name text">
+                        <p>YUNFAN, YANG</p>
+                    </div>
                     <div class="space-y-2 mt-5 font-regular">
-                        <div>Software Development Intern at AGvisorPRO Inc.</div>
-                        <div>BSc Computer Science at the University of Calgary '24</div>
+                        <div class="text">
+                            <p>Software Development Intern at AGvisorPRO Inc.</p>
+                        </div>
+                        <div class="text">
+                            <p>BSc Computer Science at the University of Calgary '24</p>
+                        </div>
                         <div class="space-y-0 text-gray-700">
-                            <div><span class="font-bold text-blue-300">+</span> Honours Stream</div>
-                            <div><span class="font-bold text-blue-300">+</span> Software Engineering Concentration</div>
-                            <div><span class="font-bold text-blue-300">+</span> Data Science Minor</div>
+                            <div class="text">
+                                <p>
+                                    <span class="font-bold text-blue-300">+</span> Honours Stream
+                                </p>
+                            </div>
+                            <div class="text">
+                                <p><span class="font-bold text-blue-300">+</span> Software Engineering
+                                    Concentration</p>
+                            </div>
+                            <div class="text">
+                                <p><span class="font-bold text-blue-300">+</span> Data Science Minor</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="font-regular mt-10 mb-2">What I have also done:</div>
+                <div class="font-regular mt-10 mb-2 text">
+                    <p>What I have also done:</p>
+                </div>
                 <div class="space-y-0">
-                    <div><span class="font-bold text-pink-300">+</span> Web Development ✨</div>
-                    <div><span class="font-bold text-pink-300">+</span> UI / UX Design</div>
-                    <div><span class="font-bold text-violet-300">+</span> Natural Language Processing </div>
+                    <div class="text">
+                        <p><span class="font-bold text-pink-300">+</span> Web Development ✨</p>
+                    </div>
+                    <div class="text">
+                        <p><span class="font-bold text-pink-300">+</span> UI / UX Design</p>
+                    </div>
+                    <div class="text">
+                        <p><span class="font-bold text-violet-300">+</span> Natural Language Processing</p>
+                    </div>
                 </div>
 
-                <div class="mt-10 font-medium">If you like me, we should hang out, or collaborate on exciting projects!
+                <div class="mt-10 font-medium text">
+                    <p>If you like me, we should hang out, or collaborate on exciting projects!</p>
                 </div>
 
-                <div class="mt-10">Also find me on:</div>
-                <div class="flex flex-row -ml-1.5">
-                    <a href="https://github.com/cloudyyoung" target="_blank">
-                        <img src="icons8-github.svg" class="h-12 w-12 p-0 m-0" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/yunfan-yang-cy/" target="_blank">
-                        <img src="icons8-linkedin.svg" class="h-12 w-12 p-0 m-0" />
-                    </a>
-                    <a href="https://www.instagram.com/cloudyyoung74/" target="_blank">
-                        <img src="icons8-instagram.svg" class="h-12 w-12 p-0 m-0" />
-                    </a>
+                <div class="mt-10 text">
+                    <p>Also find me on:</p>
+                </div>
+                <div class="-ml-1.5 text">
+                    <p class="flex flex-row space-x-1">
+                        <a href="https://github.com/cloudyyoung" target="_blank">
+                            <img src="icons8-github.svg" class="h-10 w-10 p-0 m-0" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/yunfan-yang-cy/" target="_blank">
+                            <img src="icons8-linkedin.svg" class="h-10 w-10 p-0 m-0" />
+                        </a>
+                        <a href="https://www.instagram.com/cloudyyoung74/" target="_blank">
+                            <img src="icons8-instagram.svg" class="h-10 w-10 p-0 m-0" />
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -302,6 +348,12 @@
             $(".y").toggleClass("activated");
             $(".menu").toggleClass("activated");
             $(".menu-button").toggleClass("activated");
+        });
+
+        let counter = 0; //ms
+        $(".menu .text p").each((i, e) => {
+            $(e).css("animation-delay", (counter / 1000) + "s");
+            counter += 75;
         });
     </script>
 </body>
