@@ -94,15 +94,22 @@
 
         .menu.activated {
             transform: scale(1.0);
-            transition: all 0s linear;
-            transition-delay: 0.4s;
+            transition: transform 0s linear;
+            transition-delay: 0.35s;
         }
 
-        .menu-bg {
+        .menu .menu-bg {
+            opacity: 0;
             background-image: url("bg-g1.png");
             background-position: right top;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+
+        .menu.activated .menu-bg {
+            opacity: 1;
+            transition: all 0.3s cubic-bezier(.26, .82, .82, .99);
+            transition-delay: 0.35s;
         }
 
         .menu-button {
