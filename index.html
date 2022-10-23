@@ -89,13 +89,14 @@
         }
 
         .menu {
+            opacity: 0;
             transform: scale(0.0);
         }
 
         .menu.activated {
+            opacity: 1;
             transform: scale(1.0);
-            transition: transform 0s linear;
-            transition-delay: 0.35s;
+            transition: transform 0s linear 0.3s, opacity 0.2s linear 0.2s;
         }
 
         .menu .menu-bg {
@@ -109,7 +110,7 @@
         .menu.activated .menu-bg {
             opacity: 1;
             transition: all 0.3s cubic-bezier(.26, .82, .82, .99);
-            transition-delay: 0.35s;
+            transition-delay: 0.3s;
         }
 
         .menu-button {
