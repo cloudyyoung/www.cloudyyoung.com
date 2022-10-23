@@ -68,6 +68,13 @@
 
         .menu-text {
             animation: spin 10s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(.37, .95, 0, 1.42);
+        }
+
+        .menu-text.visible {
+            opacity: 1;
+            transition: opacity 0.8s cubic-bezier(0, 1.08, .26, .84);
         }
 
         @keyframes spin {
@@ -339,16 +346,16 @@
         });
 
         $(".menu-button").hover((e) => {
-            $(".menu-text").eq(0).css("opacity", 1);
+            $(".menu-text").eq(0).addClass("visible");
         }, (e) => {
-            $(".menu-text").eq(0).css("opacity", 0);
+            $(".menu-text").eq(0).removeClass("visible");
         });
 
         $(".menu-button").click((e) => {
             $(".y").toggleClass("activated");
             $(".menu").toggleClass("activated");
             $(".menu-button").toggleClass("activated");
-            $(".menu .avatar").fadeIn(1000);
+            $(".menu .avatar").fadeIn(1200);
         });
 
         let counter = 0; //ms
