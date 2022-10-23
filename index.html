@@ -80,11 +80,21 @@
             margin-top: -5rem;
             font-size: 200rem;
             transform: scale(0.0);
-            transition: all 0.8s cubic-bezier(1, 0, 0, .96);
         }
 
         .y.activated {
             transform: scale(3);
+            transition: all 0.8s cubic-bezier(1, 0, 0, .96);
+        }
+
+        .menu {
+            transform: scale(0.0);
+        }
+
+        .menu.activated {
+            transform: scale(1.0);
+            transition: all 0s linear;
+            transition-delay: 0.8s;
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,8 +105,8 @@
 </head>
 
 <body>
-    <div class="fixed right-0 py-3 px-1 md:p-6 z-40">
-        <button class="p-6 menu-button">
+    <div class="fixed right-0 z-40">
+        <button class="py-9 px-7 md:p-12 menu-button">
             <img src="icons8-menu.svg" class="float-left w-6 h-6 md:w-7 md:h-7" />
             <div
                 class="fixed menu-text text-2xl font-medium tracking-tighter text-white/84 transition-opacity opacity-0 rounded-full">
@@ -124,7 +134,7 @@
     </div>
 
 
-    <div class="menu hidden fixed bg-white h-screen w-screen top-0 left-0 z-0">
+    <div class="menu fixed bg-white h-screen w-screen top-0 left-0 z-0">
 
     </div>
 
@@ -194,7 +204,7 @@
             .go();
     </script>
     <script>
-        new CircleType($(".menu-text")[0]);
+        new CircleType($(".menu-text")[0]).radius(1);
 
         $(document).mousemove((e) => {
             $('.menu-text').eq(0).css({
@@ -211,10 +221,7 @@
 
         $(".menu-button").click((e) => {
             $(".y").toggleClass("activated");
-
-            setTimeout(() => {
-                $(".menu").toggleClass("hidden");
-            }, 800);
+            $(".menu").toggleClass("activated");
         });
     </script>
 </body>
