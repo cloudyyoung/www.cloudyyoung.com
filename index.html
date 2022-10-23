@@ -95,7 +95,14 @@
         .menu.activated {
             transform: scale(1.0);
             transition: all 0s linear;
-            transition-delay: 0.5s;
+            transition-delay: 0.4s;
+        }
+
+        .menu-bg {
+            background-image: url("bg-g1.png");
+            background-position: right top;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -137,7 +144,8 @@
 
 
     <div class="menu fixed bg-white h-screen w-screen top-0 left-0 z-0">
-
+        <div class="menu-bg absolute w-full h-full top-0 right-0"></div>
+        <!-- <img src="bg-g1.png" class="menu-bg absolute w-screen h-screen top-0 left-0"> -->
     </div>
 
     <script>
