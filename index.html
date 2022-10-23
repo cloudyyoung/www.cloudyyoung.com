@@ -60,14 +60,38 @@
                 opacity: 0.95;
             }
         }
+
+        .menu-text {
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
 </head>
 
 <body>
+    <div class="absolute right-0 p-6">
+        <button class="p-6 menu-button">
+            <img src="icons8-menu.svg" class="float-left w-6 h-6" />
+            <div
+                class="fixed menu-text text-2xl font-medium tracking-tighter text-white/84 transition-opacity opacity-0 rounded-full">
+                MENUMENUMENUMENU
+            </div>
+        </button>
+    </div>
     <div class="grid h-screen place-items-center">
         <div>
             <div class="w-full md:w-96 hidden md:block rounded-full overflow-hidden">
@@ -87,7 +111,7 @@
             loop: true,
             cursorChar: '_',
         })
-            .type("<span class='font-medium name'>Yunfan Yang</span>")
+            .type("<span class='font-bold name'>Yunfan Yang</span>")
             .pause(1000)
 
             .type("<br>")
@@ -144,6 +168,22 @@
             .pause(1000)
 
             .go();
+    </script>
+    <script>
+        new CircleType($(".menu-text")[0]);
+
+        $(document).mousemove((e) => {
+            $('.menu-text').eq(0).css({
+                left: e.clientX,
+                top: e.clientY - $('.menu-text').eq(0).height() / 2
+            });
+        });
+
+        $(".menu-button").hover((e) => {
+            $(".menu-text").eq(0).css("opacity", 1);
+        }, (e) => {
+            $(".menu-text").eq(0).css("opacity", 0);
+        });
     </script>
 </body>
 
