@@ -75,6 +75,17 @@
                 transform: rotate(360deg);
             }
         }
+
+        .y {
+            margin-top: -5rem;
+            font-size: 200rem;
+            transform: scale(0.0);
+            transition: all 0.8s cubic-bezier(1, 0, 0, .96);
+        }
+
+        .y.activated {
+            transform: scale(3);
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -84,28 +95,39 @@
 </head>
 
 <body>
-    <div class="absolute right-0 py-3 px-1 sm:p-6 z-40">
+    <div class="fixed right-0 py-3 px-1 md:p-6 z-40">
         <button class="p-6 menu-button">
-            <img src="icons8-menu.svg" class="float-left w-6 h-6" />
+            <img src="icons8-menu.svg" class="float-left w-6 h-6 md:w-7 md:h-7" />
             <div
                 class="fixed menu-text text-2xl font-medium tracking-tighter text-white/84 transition-opacity opacity-0 rounded-full">
                 MENUMENUMENUMENU
             </div>
         </button>
     </div>
-    <div class="grid h-screen place-items-center">
-        <div>
-            <div class="w-full md:w-96 hidden md:block rounded-full overflow-hidden">
-                <video autoplay muted loop>
-                    <source src="bg.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    <div class="fixed h-screen w-screen overflow-hidden">
+        <div class="grid h-screen place-items-center">
+            <div>
+                <div class="w-full md:w-96 hidden md:block rounded-full overflow-hidden">
+                    <video autoplay muted loop>
+                        <source src="bg.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <img src="bg.gif" class="w-full md:w-96 md:hidden rounded-full overflow-hidden video">
+                <div class="text-white/92 text-2xl md:text-3xl text-center font-light type mt-8 -mb-10 h-20"></div>
             </div>
-            <img src="bg.gif" class="w-full md:w-96 md:hidden rounded-full overflow-hidden video">
-            <div class="text-white/92 text-2xl md:text-3xl text-center font-light type mt-8 -mb-10 h-20"></div>
+
+            <div class="fixed">
+                <div class="y text-white font-extrabold">Y</div>
+            </div>
         </div>
     </div>
-    
+
+
+    <div class="menu hidden fixed bg-white h-screen w-screen top-0 left-0 z-0">
+
+    </div>
+
     <script>
         new TypeIt(".type", {
             lifeLike: true,
@@ -185,6 +207,14 @@
             $(".menu-text").eq(0).css("opacity", 1);
         }, (e) => {
             $(".menu-text").eq(0).css("opacity", 0);
+        });
+
+        $(".menu-button").click((e) => {
+            $(".y").toggleClass("activated");
+
+            setTimeout(() => {
+                $(".menu").toggleClass("hidden");
+            }, 800);
         });
     </script>
 </body>
