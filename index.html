@@ -69,12 +69,12 @@
         .menu-text {
             animation: spin 10s linear infinite;
             opacity: 0;
-            transition: opacity 0.4s cubic-bezier(.37, .95, 0, 1.42);
+            transition: opacity 0.4s cubic-bezier(.37, .95, 0, 1.42), left 0.1s ease, top 0.1s ease;
         }
 
         .menu-text.visible {
             opacity: 1;
-            transition: opacity 0.8s cubic-bezier(0, 1.08, .26, .84);
+            transition: opacity 0.8s cubic-bezier(0, 1.08, .26, .84), left 0.1s ease, top 0.1s ease;
         }
 
         @keyframes spin {
