@@ -351,6 +351,8 @@
             $(".menu-text").eq(0).removeClass("visible");
         });
 
+        window.addEventListener('resize', () => $(".menu-text").eq(0).removeClass("visible"));
+
         $(".menu-button").click((e) => {
             $(".y").toggleClass("activated");
             $(".menu").toggleClass("activated");
