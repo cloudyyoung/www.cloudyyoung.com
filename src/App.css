@@ -1,3 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --ti-cursor-color: #c4edff;
+  --ti-cursor-font-family: 'Space Grotesk', sans-serif;
+  --ti-cursor-transform: translate(0.05rem, 0.15rem);
+  --ti-cursor-font-weight: 600;
+}
+
+
+
 .App {
   text-align: center;
 }
