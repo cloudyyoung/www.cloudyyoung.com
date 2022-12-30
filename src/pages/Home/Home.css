@@ -1,0 +1,136 @@
+:root {
+    --ti-cursor-color: #c4edff;
+    --ti-cursor-font-family: 'Space Grotesk', sans-serif;
+    --ti-cursor-transform: translate(0.05rem, 0.15rem);
+    --ti-cursor-font-weight: 600;
+    background-color: #070607;
+    color: #ffffff;
+}
+
+.video {
+    animation-name: pulse;
+    animation-duration: 20.0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    box-shadow: inset 200px 200px 100px 2000px #000000;
+    z-index: -99;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.95;
+    }
+
+    10% {
+        opacity: 1.0;
+    }
+
+    45% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    75% {
+        opacity: 0.84;
+    }
+
+    80% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0.95;
+    }
+}
+
+.menu-text {
+    animation: spin 10s linear infinite;
+    transition: opacity 0.4s cubic-bezier(.37, .95, 0, 1.42);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.y {
+    margin-top: -4.4rem;
+    font-size: 600%;
+    line-height: 1rem;
+    transform: scale(0) rotate(-10deg);
+    opacity: 0.9;
+}
+
+.y.activated {
+    transform: scale(100) rotate(30deg);
+    transition: all 0.5s cubic-bezier(1, 0, 0, .96);
+    opacity: 1.0;
+}
+
+.menu {
+    opacity: 0;
+    transform: scale(0.0);
+}
+
+.menu.activated {
+    opacity: 1;
+    transform: scale(1.0);
+    transition: transform 0s linear 0.3s, opacity 0.2s linear 0.2s;
+}
+
+.menu .menu-bg {
+    opacity: 0;
+    background-image: url("bg-g1.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu.activated .menu-bg {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(.26, .82, .82, .99);
+    transition-delay: 0.3s;
+}
+
+.menu-button {
+    transform: rotate(-45deg);
+    transition: transform 0.5s cubic-bezier(1, 0, 0, .96);
+}
+
+.menu-button.activated {
+    transform: none;
+}
+
+.avatar {
+    background-image: url("avatar.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu .text {
+    overflow: hidden;
+}
+
+.menu.activated .text p {
+    animation: slide-up 1.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
