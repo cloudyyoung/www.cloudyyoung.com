@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { overridePropsDeep, typeOfComponent } from 'react-nanny'
 import { twMerge as classnames } from 'tailwind-merge'
+import { useLocation } from 'react-router-dom'
 
 import './Profile.css'
 import GithubIcon from './icons8-github.svg'
@@ -21,20 +22,28 @@ const AnimatedText = ({ children, delay, style, className, ...props }) => {
 const Profile = () => {
   const [isTransitionActivated, setTransitionActivated] = useState(false)
   const [isProfileActivated, setProfileActivated] = useState(false)
+  const location = useLocation()
+
   useEffect(() => {
-    const transitionTimeout = setTimeout(() => {
-      setTransitionActivated(true)
-    }, 0)
-    const profileTimeout = setTimeout(() => {
+    const isReloaded = (
+      (window.performance.navigation && window.performance.navigation.type === 1) ||
+      window.performance
+        .getEntriesByType('navigation')
+        .map((nav) => nav.type)
+        .includes('reload')
+    )
+
+    if (location.state?.from === "home" && !isReloaded) {
+      setTimeout(() => {
+        setTransitionActivated(true)
+      }, 0)
+      setTimeout(() => {
+        setProfileActivated(true)
+      }, 600)
+    } else {
       setProfileActivated(true)
-    }, 600)
-
-    return () => {
-      clearTimeout(transitionTimeout)
-      clearTimeout(profileTimeout)
     }
-  }, [])
-
+  }, [location])
 
   const profile = (
     <>
@@ -46,7 +55,7 @@ const Profile = () => {
         </svg>
       </div>
 
-      <div className={classnames("fixed h-screen w-screen top-0 left-0 z-20 bg-white profile", isProfileActivated && "activated opacity-100")}>
+      <div className={classnames("fixed h-screen w-screen top-0 left-0 z-20 bg-white profile", isProfileActivated && "activated", isTransitionActivated && "transitional")}>
         <div className="h-full overflow-y-auto">
           <div className="w-4xl max-w-4xl m-auto py-32 px-10 md:p-24 text-gray-900 text-md md:text-xl">
             <div className="avatar rounded-full h-24 w-24 md:h-24 md:w-24 -ml-0.5"></div>

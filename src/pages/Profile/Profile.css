@@ -5,11 +5,14 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: opacity 0.5s cubic-bezier(.26, .82, .82, .99);
 }
 
 .profile.activated {
     opacity: 1;
+}
+
+.profile.activated.transitional {
+    transition: opacity 0.5s cubic-bezier(.26, .82, .82, .99);
 }
 
 /* .menu-button {
