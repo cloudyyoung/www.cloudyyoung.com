@@ -46,7 +46,7 @@ const Profile = () => {
           </AnimatedText>
 
           <AnimatedText className="mt-10">Also find me on:</AnimatedText>
-          <div className="-ml-1.5 text">
+          <AnimatedText className="-ml-0.5">
             <p className="flex flex-row space-x-1">
               <a href="https://github.com/cloudyyoung" target="_blank" rel="noreferrer">
                 <img src={GithubIcon} alt="github icon" className="h-10 w-10 p-0 m-0" />
@@ -58,7 +58,7 @@ const Profile = () => {
                 <img src={InstagramIcon} alt="instagram icon" className="h-10 w-10 p-0 m-0" />
               </a>
             </p>
-          </div>
+          </AnimatedText>
         </div>
       </div>
     </div>
