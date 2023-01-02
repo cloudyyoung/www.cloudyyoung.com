@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div ref={containerRef} className="text-white fixed w-screen h-screen top-0 left-0 bg-[#070607] -z-10">
       <div className="fixed right-0 z-40">
-        <Link to="me">
+        <Link to="me" state={{ from: "home" }}>
           <button ref={profileLinkRef} className="py-9 px-7 md:p-12 menu-button rounded-full overflow-hidden">
             <img src={closeIcon} className="float-left w-7 h-7 md:w-9 md:h-9" alt="Expand profile button" />
           </button>

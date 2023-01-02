@@ -1,37 +1,38 @@
 
-.menu-bg {
+.profile {
+    opacity: 0;
     background-image: url("./bg-g1.png");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: opacity 0.5s cubic-bezier(.26, .82, .82, .99);
 }
 
-.menu.activated .menu-bg {
-    transition: all 0.5s cubic-bezier(.26, .82, .82, .99);
-    transition-delay: 0.3s;
+.profile.activated {
+    opacity: 1;
 }
 
-.menu-button {
+/* .menu-button {
     transform: rotate(-45deg);
     transition: transform 0.5s cubic-bezier(1, 0, 0, .96);
 }
 
 .menu-button.activated {
     transform: none;
-}
+} */
 
 .avatar {
-    background-image: url("avatar.jpg");
+    background-image: url("./avatar.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.text {
+.text-wrapper {
     overflow: hidden;
 }
 
-.activated .text p {
+.activated .text-wrapper .text {
     animation: slide-up 1.4s cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
@@ -47,20 +48,20 @@
 
 .y {
     position: fixed;
-    height: 800%;
-    width: 800%;
+    height: 1200%;
+    width: 1200%;
     max-height: none;
     max-width: none;
-    top: 48%;
+    top: 36%;
     left: 50%;
     margin: 0;
     padding: 0;
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(0.05);
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0) rotate(-10deg);
 }
 
 .y.activated {
     transform: translate(-50%, -50%) scale(1) rotate(30deg);
-    transition: all 0.5s cubic-bezier(1, 0, 0, .96);
+    transition: all 0.6s cubic-bezier(1, 0, 0, .96);
     opacity: 1.0;
 }
