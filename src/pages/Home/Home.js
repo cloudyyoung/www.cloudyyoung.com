@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import TypeIt from "typeit-react"
 import CircleType from "circletype"
 import { useMouse, useHoverDirty } from 'react-use'
@@ -27,9 +28,11 @@ const Home = () => {
   return (
     <div ref={containerRef}>
       <div className="fixed right-0 z-40">
-        <button ref={profileLinkRef} className="py-9 px-7 md:p-12 menu-button rounded-full overflow-hidden">
-          <img src={closeIcon} className="float-left w-7 h-7 md:w-9 md:h-9" alt="Expand profile button" />
-        </button>
+        <Link to="me">
+          <button ref={profileLinkRef} className="py-9 px-7 md:p-12 menu-button rounded-full overflow-hidden">
+            <img src={closeIcon} className="float-left w-7 h-7 md:w-9 md:h-9" alt="Expand profile button" />
+          </button>
+        </Link>
         <div
           ref={circleTypeRef}
           style={{ left: `${docX}px`, top: `${docY - circleTypeRef?.current?.clientHeight / 2}px` }}
