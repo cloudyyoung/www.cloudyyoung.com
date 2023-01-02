@@ -1,0 +1,47 @@
+
+.menu-bg {
+    background-image: url("./bg-g1.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu.activated .menu-bg {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(.26, .82, .82, .99);
+    transition-delay: 0.3s;
+}
+
+.menu-button {
+    transform: rotate(-45deg);
+    transition: transform 0.5s cubic-bezier(1, 0, 0, .96);
+}
+
+.menu-button.activated {
+    transform: none;
+}
+
+.avatar {
+    background-image: url("avatar.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.text {
+    overflow: hidden;
+}
+
+.activated .text p {
+    animation: slide-up 1.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
