@@ -3,8 +3,6 @@
     --ti-cursor-font-family: 'Space Grotesk', sans-serif;
     --ti-cursor-transform: translate(0.05rem, 0.15rem);
     --ti-cursor-font-weight: 600;
-    background-color: #070607;
-    color: #ffffff;
 }
 
 .video {
@@ -60,18 +58,4 @@
     to {
         transform: rotate(360deg);
     }
-}
-
-.y {
-    margin-top: -4.4rem;
-    font-size: 600%;
-    line-height: 1rem;
-    transform: scale(0) rotate(-10deg);
-    opacity: 0.9;
-}
-
-.y.activated {
-    transform: scale(100) rotate(30deg);
-    transition: all 0.5s cubic-bezier(1, 0, 0, .96);
-    opacity: 1.0;
 }

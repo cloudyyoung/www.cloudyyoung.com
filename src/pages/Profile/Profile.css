@@ -7,7 +7,6 @@
 }
 
 .menu.activated .menu-bg {
-    opacity: 1;
     transition: all 0.5s cubic-bezier(.26, .82, .82, .99);
     transition-delay: 0.3s;
 }
@@ -44,4 +43,24 @@
     100% {
         transform: translateY(0)
     }
+}
+
+.y {
+    position: fixed;
+    height: 800%;
+    width: 800%;
+    max-height: none;
+    max-width: none;
+    top: 48%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.05);
+}
+
+.y.activated {
+    transform: translate(-50%, -50%) scale(1) rotate(30deg);
+    transition: all 0.5s cubic-bezier(1, 0, 0, .96);
+    opacity: 1.0;
 }
