@@ -25,15 +25,14 @@ const Profile = () => {
   const location = useLocation()
 
   useEffect(() => {
-    const isReloaded = (
-      (window.performance.navigation && window.performance.navigation.type === 1) ||
+    const isReloaded =
       window.performance
         .getEntriesByType('navigation')
-        .map((nav) => nav.type)
-        .includes('reload')
-    )
+        .filter((nav) => nav.name.endsWith(location.pathname) && nav.type === 'reload')
+        .length > 0
 
-    if (location.state?.from === "home" && !isReloaded) {
+
+    if (!isReloaded && location.state?.from === "home") {
       setTimeout(() => {
         setTransitionActivated(true)
       }, 0)
