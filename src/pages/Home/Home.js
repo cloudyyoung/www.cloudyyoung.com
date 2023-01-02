@@ -26,7 +26,7 @@ const Home = () => {
   const isHovering = useHoverDirty(profileLinkRef);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="text-white h-screen" style={{ backgroundColor: "#070607" }}>
       <div className="fixed right-0 z-40">
         <Link to="me">
           <button ref={profileLinkRef} className="py-9 px-7 md:p-12 menu-button rounded-full overflow-hidden">
