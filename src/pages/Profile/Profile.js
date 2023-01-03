@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { overridePropsDeep, typeOfComponent } from 'react-nanny'
 import { twMerge as classnames } from 'tailwind-merge'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import './Profile.css'
 import GithubIcon from './icons8-github.svg'
@@ -23,26 +23,24 @@ const Profile = () => {
   const [isTransitionActivated, setTransitionActivated] = useState(false)
   const [isProfileActivated, setProfileActivated] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const isReloaded =
-      window.performance
-        .getEntriesByType('navigation')
-        .filter((nav) => nav.name.endsWith(location.pathname) && nav.type === 'reload')
-        .length > 0
+    console.log(location.state?.from)
 
-
-    if (!isReloaded && location.state?.from === "home") {
+    if (location.state?.from === "home") {
       setTimeout(() => {
         setTransitionActivated(true)
       }, 0)
       setTimeout(() => {
         setProfileActivated(true)
-      }, 600)
+        navigate(".", { replace: true, state: { from: undefined } })
+      }, 500)
     } else {
       setProfileActivated(true)
     }
-  }, [location])
+
+  }, [location, navigate])
 
   const profile = (
     <>
