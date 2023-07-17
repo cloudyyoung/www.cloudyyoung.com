@@ -17,7 +17,7 @@
 
     .mesh-grad {
         @apply absolute h-[110%] w-[110%] -z-50 -top-[18%] -right-[22%];
-        background-image: url("../assets/Mesh-Grad.png");
+        background-image: url("../../assets/Mesh-Grad.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: top right;
@@ -45,14 +45,14 @@
 
     .illustration-02 {
         @apply w-full h-[36rem] col-span-2;
-        background-image: url("../assets/02.png");
+        background-image: url("../../assets/02.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
 
     .illustration-09 {
         @apply w-full h-[36rem] col-span-1;
-        background-image: url("../assets/09.png");
+        background-image: url("../../assets/09.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
