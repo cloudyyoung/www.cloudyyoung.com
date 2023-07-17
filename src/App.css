@@ -35,7 +35,7 @@
   }
 
   .headline {
-    @apply font-["Inter"] text-[1.46rem] tracking-tight text-[#4a4a4a] leading-normal ml-0.5;
+    @apply text-[1.46rem] tracking-tight text-[#4a4a4a] leading-normal ml-0.5;
   }
 
   .greeting-container {
@@ -55,7 +55,7 @@
   }
 
   .bio {
-    @apply font-["Inter"] tracking-tight text-[1.42rem] mb-6;
+    @apply tracking-tight text-[1.38rem] mb-6 text-[#4a4a4a] leading-normal;
   }
 
   .greeting-blob {
