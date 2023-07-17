@@ -13,3 +13,6 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply bg-[#070607] text-white overflow-x-hidden;
+}
