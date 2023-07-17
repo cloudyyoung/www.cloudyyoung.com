@@ -1,10 +1,11 @@
 
 .mesh-grad {
-    @apply absolute h-[110%] w-[110%] -z-50 -top-[18%] -right-[22%];
+    @apply absolute w-[110%] -z-50 -top-[18%] -right-[22%];
     background-image: url("../../assets/Mesh-Grad.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top right;
+    height: max(52rem, 110%);
 }
 
 .illustrations {
