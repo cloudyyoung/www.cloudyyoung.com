@@ -7,7 +7,7 @@ const App = () => {
       
       <div className='hero-container'>
         <div className='hero'>
-          <div className='blob-section'>
+          <div className='hero-blob'>
             <div className='grad-9'></div>
           </div>
           <div className='info-section'>
@@ -18,7 +18,6 @@ const App = () => {
               <div className='headline'>
                 <p>Software Development Intern, AGvisorPRO Inc.</p>
                 <p>BSc Computer Science, University of Calgary</p>
-                {/* <p>Calgary Alberta Canada</p> */}
               </div>
             </div>
           </div>
@@ -49,6 +48,10 @@ const App = () => {
         <div className='greeting-blob'>
           <div className='grad-18'></div>
         </div>
+      </div>
+
+      <div className='work'>
+        <div className='work-blob'></div>
       </div>
 
       <div className='footer'>
