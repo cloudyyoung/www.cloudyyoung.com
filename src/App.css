@@ -15,6 +15,10 @@
     @apply max-w-10xl mx-auto mt-[14rem];
   }
 
+  .bread {
+    @apply text-[#b5b5b5] mb-1 text-[200];
+  }
+
   .hero {
     @apply flex flex-row gap-8;
   }
@@ -28,7 +32,7 @@
   }
 
   .intro {
-    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[fafafa];
+    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[#dcdcdc];
   }
 
   .illustrations {

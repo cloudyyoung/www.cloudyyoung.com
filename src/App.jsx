@@ -5,6 +5,7 @@ function App() {
     <>
       <div className='navbar'></div>
       <div className='container'>
+        {/* <div className='bread'>Home</div> */}
 
         <div className='hero'>
           <div className='bio'>
