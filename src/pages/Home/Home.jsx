@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Hero from '../../components/Hero';
+import Container from '../../components/Container';
 
 import styles from "./Home.module.css";
 
 const Home = () => {
   return (
     <>
-      <div className='navbar'></div>
-      <div className={styles.container}>
+      <Container className='mt-[14rem]'>
 
         <div className={styles['mesh-grad']}></div>
 
@@ -37,7 +37,7 @@ const Home = () => {
             You will be able to find some of my works here. They are rarely in the same areas as my interests are always changing from time to time. I hope you will find something interesting.
           </div>
         </div>
-      </div>
+      </Container>
     </>
   )
 }

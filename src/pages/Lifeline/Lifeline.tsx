@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./Lifeline.css"
+import "./Lifeline.module.css"
 
 const Lifeline = () => {
   return (
