@@ -10,7 +10,7 @@ const Hero = ({
     subtitle: intro
 }: HeroProps) => {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col mt-6 mb-24'>
             <div className='font-heading text-[3.8rem] tracking-tight leading-[1.4] w-[46rem] font-[600]'>
                 {name}
             </div>

@@ -2,3 +2,11 @@
 .bread {
     @apply text-[#b5b5b5] mb-1 text-xl;
 }
+
+.illustration_container {
+    @apply my-12 w-fit;
+}
+
+.illustration {
+    @apply h-[30rem] w-auto;
+}

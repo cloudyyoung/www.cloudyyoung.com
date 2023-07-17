@@ -4,6 +4,7 @@ import Container from '../../components/Container'
 import Hero from '../../components/Hero'
 
 import styles from "./Lifeline.module.css";
+import illustration from "./01.svg";
 
 const Subtitle = () => {
   return (
@@ -25,7 +26,9 @@ const Lifeline = () => {
           subtitle={<Subtitle />}
         />
 
-
+        <div className={styles.illustration_container}>
+          <img className={styles.illustration} src={illustration} />
+        </div>
       </Container>
     </>
   )
