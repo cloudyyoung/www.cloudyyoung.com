@@ -30,7 +30,7 @@ function App() {
           </div>
 
           <div className='bio'>
-            I focus on mainly web development, and self-teaching design.
+            I focus on mainly web technologies, and self-teaching designs.
             As a computer science student, my disciplines drive me exploring all different areas in the fields of Computer Science, Data Science and Software Engineering. 
           </div>
 

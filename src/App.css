@@ -36,7 +36,7 @@
   }
 
   .hero .intro {
-    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[#ededed];
+    @apply text-[2.3rem] tracking-tight leading-[1.2] w-[46rem] text-[#ededed];
   }
 
   .illustrations {
