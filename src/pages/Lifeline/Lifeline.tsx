@@ -7,7 +7,7 @@ import Hero from '../../components/Hero'
 const Subtitle = () => {
   return (
     <>
-      A open source project to&nbsp;
+      An open source project to&nbsp;
       <span className='italic'>help students never miss a deadline</span>.
     </>
   );
