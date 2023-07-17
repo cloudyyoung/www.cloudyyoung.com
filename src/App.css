@@ -47,7 +47,7 @@
   }
 
   .greeting-short {
-    @apply mt-8 mb-6 text-lg uppercase;
+    @apply mt-8 mb-6 text-lg uppercase font-mono text-red-500 font-[500];
   }
 
   .greeting-headline {
