@@ -24,7 +24,7 @@
     }
 
     .bread {
-        @apply text-[#b5b5b5] mb-1 text-[200];
+        @apply text-[#b5b5b5] mb-1 text-xl;
     }
 
     .hero {
@@ -67,9 +67,5 @@
 
     .greeting .bio {
         @apply text-[#ededed] text-2xl tracking-tight w-[56rem] leading-snug;
-    }
-
-    .footer {
-        @apply mt-8 mb-12 flex flex-col items-center justify-center font-heading font-medium;
     }
 }
