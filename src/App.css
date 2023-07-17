@@ -4,7 +4,7 @@
 
 @layer utilities {
   body {
-    @apply bg-[#070607] text-white;
+    @apply bg-[#070607] text-white overflow-x-hidden;
   }
   
   .navbar {
@@ -13,6 +13,14 @@
 
   .container {
     @apply max-w-10xl mx-auto mt-[14rem] px-6;
+  }
+
+  .mesh-grad {
+    @apply absolute h-[110%] w-[110%] -z-50 -top-[18%] -right-[22%];
+    background-image: url("./assets/Mesh-Grad.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
   }
 
   .bread {
@@ -59,5 +67,9 @@
 
   .greeting .bio {
     @apply text-[#ededed] text-2xl tracking-tight w-[56rem] leading-snug;
+  }
+
+  .footer {
+    @apply mt-8 mb-12 flex flex-col items-center justify-center font-heading font-medium;
   }
 }

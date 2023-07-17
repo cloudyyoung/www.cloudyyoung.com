@@ -7,6 +7,8 @@ function App() {
       <div className='container'>
         {/* <div className='bread'>Home</div> */}
 
+        <div className='mesh-grad'></div>
+
         <div className='hero'>
           <div className='name'>
             Yunfan Yang,
@@ -36,6 +38,11 @@ function App() {
             I am always passionate about learning new technologies and building cool stuff.
             You will be able to find some of my works here. They are rarely in the same areas as my interests are always changing from time to time. I hope you will find something interesting.
           </div>
+        </div>
+
+        <div className='footer'>
+          <div>Built with React</div>
+          <div>&copy; Yunfan Yang 2023</div>
         </div>
       </div>
     </>
