@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    @apply bg-[#070607] text-white;
+  }
+  
+  .navbar {
+    @apply h-[10rem] fixed bg-transparent;
+  }
+
+  .container {
+    @apply max-w-10xl mx-auto mt-[14rem];
+  }
+
+  .hero {
+    @apply flex flex-row gap-8;
+  }
+
+  .bio {
+    @apply flex flex-col;
+  }
+
+  .name {
+    @apply font-heading text-[3.8rem] tracking-tight leading-[1.4] w-[46rem] font-[600];
+  }
+
+  .intro {
+    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[fafafa];
+  }
+
+  .illustrations {
+    @apply grid grid-cols-3 gap-8 my-[6rem];
+  }
+
+  .illustration-02 {
+    @apply w-full h-[36rem] col-span-2;
+    background-image: url("./assets/02.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .illustration-09 {
+    @apply w-full h-[36rem] col-span-1;
+    background-image: url("./assets/09.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
