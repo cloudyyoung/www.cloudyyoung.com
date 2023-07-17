@@ -1,34 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer utilities {
-    body {
-        @apply bg-[#070607] text-white overflow-x-hidden;
-    }
-
-    .navbar {
-        @apply h-[10rem] fixed bg-transparent;
-    }
-
-    .container {
-        @apply max-w-10xl mx-auto mt-[16rem] px-6;
-    }
-
-    .bread {
-        @apply text-[#b5b5b5] mb-1 text-xl;
-    }
-
-    .hero {
-        @apply flex flex-col;
-    }
-
-    .hero .name {
-        @apply font-heading text-[3.8rem] tracking-tight leading-[1.4] w-[46rem] font-[600];
-    }
-
-    .hero .intro {
-        @apply text-[2.3rem] tracking-tight leading-[1.2] w-[46rem] text-[#ededed];
-    }
-
+.bread {
+    @apply text-[#b5b5b5] mb-1 text-xl;
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 
-import "./Lifeline.module.css"
 import Container from '../../components/Container'
 import Hero from '../../components/Hero'
+
+import styles from "./Lifeline.module.css";
 
 const Subtitle = () => {
   return (
@@ -17,11 +18,14 @@ const Lifeline = () => {
   return (
     <>
       <Container>
-        <div className='bread'>Projects</div>
+        <div className={styles.bread}>Projects</div>
+
         <Hero
           title="Lifeline"
           subtitle={<Subtitle />}
         />
+
+
       </Container>
     </>
   )
