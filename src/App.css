@@ -12,7 +12,7 @@
   }
 
   .container {
-    @apply max-w-10xl mx-auto mt-[14rem];
+    @apply max-w-10xl mx-auto mt-[14rem] px-6;
   }
 
   .bread {
@@ -20,19 +20,15 @@
   }
 
   .hero {
-    @apply flex flex-row gap-8;
-  }
-
-  .bio {
     @apply flex flex-col;
   }
 
-  .name {
+  .hero .name {
     @apply font-heading text-[3.8rem] tracking-tight leading-[1.4] w-[46rem] font-[600];
   }
 
-  .intro {
-    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[#dcdcdc];
+  .hero .intro {
+    @apply text-[2.4rem] tracking-tight leading-[1.2] w-[46rem] text-[#ededed];
   }
 
   .illustrations {
@@ -51,5 +47,17 @@
     background-image: url("./assets/09.png");
     background-size: cover;
     background-repeat: no-repeat;
+  }
+
+  .greeting {
+    @apply flex flex-col gap-4 my-24 pt-8 border-t-2 border-[#bcbcbc];
+  }
+
+  .greeting .headline {
+    @apply font-heading text-5xl leading-tight mb-4 w-[52rem] tracking-tight;
+  }
+
+  .greeting .bio {
+    @apply text-[#ededed] text-2xl tracking-tight w-[56rem] leading-snug;
   }
 }
