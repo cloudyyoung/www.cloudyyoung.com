@@ -12,9 +12,7 @@ const App = () => {
           </div>
           <div className='info-section'>
             <div>
-              <div className='name'>
-                Yunfan Yang
-              </div>
+              <div className='name'>Yunfan Yang</div>
               <div className='headline'>
                 <p>Software Development Intern, AGvisorPRO Inc.</p>
                 <p>BSc Computer Science, University of Calgary</p>
@@ -51,7 +49,10 @@ const App = () => {
       </div>
 
       <div className='work'>
-        <div className='work-blob'></div>
+        <div className='work-title grad-1'>Works</div>
+        <div className='work-list'>
+          <div className='work-item'>Lifeline</div>
+        </div>
       </div>
 
       <div className='footer'>
