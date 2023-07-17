@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Hero from '../../components/Hero';
 
 import "./Home.css"
 
@@ -8,24 +9,18 @@ const Home = () => {
     <>
       <div className='navbar'></div>
       <div className='container'>
-        {/* <div className='bread'>Home</div> */}
 
         <div className='mesh-grad'></div>
 
-        <div className='hero'>
-          <div className='name'>
-            Yunfan Yang,
-          </div>
-          <div className='intro'>
-            a Software Development Intern at AGvisorPRO Inc, and a Computer Science student at the University of Calgary.
-          </div>
-        </div>
+        <Hero
+          title="Yunfan Yang,"
+          subtitle="a Software Development Intern at AGvisorPRO Inc, and a Computer Science student at the University of Calgary."
+        />
 
         <div className='illustrations'>
           <div className='illustration-02'></div>
           <div className='illustration-09'></div>
         </div>
-
         
         <div className='greeting'>
           <div className='headline'>
