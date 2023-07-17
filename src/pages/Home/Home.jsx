@@ -8,7 +8,7 @@ import styles from "./Home.module.css";
 const Home = () => {
   return (
     <>
-      <Container className='mt-[14rem]'>
+      <Container className='pt-[12rem]'>
 
         <div className={styles['mesh-grad']}></div>
 
