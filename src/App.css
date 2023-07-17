@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .navbar {
+    @apply h-20 bg-transparent fixed;
+  }
+
+  .hero-container {
+    @apply -z-50 bg-[#f2f2f2] overflow-hidden;
+  }
+
+  .hero{
+    @apply max-w-7xl mx-auto h-[46rem] relative flex items-start justify-end;
+  }
+
+  .blob-section {
+    @apply w-[40%] h-full relative;
+  }
+
+  .info-section {
+    @apply w-[60%] h-full relative flex items-center justify-center px-12;
+  }
+
+  .grad-9 {
+    @apply h-[70rem] w-[80rem] absolute -top-[2rem] -right-[17rem];
+    background-image: url("./assets/Grad_09.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .name {
+    @apply font-["Chromate"] text-[4.6rem] tracking-tight text-[#1a1a1a] leading-none mb-5 mt-4;
+  }
+
+  .headline {
+    @apply font-["Inter"] text-[1.46rem] tracking-tight text-[#4a4a4a] leading-normal ml-0.5;
+  }
+
+  .greeting-container {
+    @apply max-w-7xl mx-auto h-[40rem] mt-20 flex;
+  }
+
+  .greeting {
+    @apply w-2/3;
+  }
+
+  .greeting-short {
+    @apply mt-8 mb-6 text-lg uppercase;
+  }
+
+  .greeting-headline {
+    @apply font-["Chromate"] text-5xl leading-tight mb-6 tracking-tight;
+  }
+
+  .bio {
+    @apply font-["Inter"] tracking-tight text-[1.42rem] mb-6;
+  }
+
+  .greeting-blob {
+    @apply relative w-1/3 overflow-hidden;
+  }
+
+  .grad-18 {
+    @apply h-[30rem] w-[30rem] absolute top-10 -left-4;
+    background-image: url("./assets/Grad_18.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .footer {
+    @apply max-w-7xl mx-auto h-[5rem];
+  }
+
+  .footer-content {
+    @apply flex justify-center items-center h-full tracking-tighter;
+  }
+}
