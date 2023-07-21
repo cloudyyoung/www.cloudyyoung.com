@@ -38,9 +38,9 @@
 }
 
 .greeting .headline {
-    @apply font-heading text-5xl leading-tight mb-4 w-[52rem] tracking-tight;
+    @apply font-heading text-5xl leading-tight mb-4 xl:w-[52rem] tracking-tight;
 }
 
 .greeting .bio {
-    @apply text-[#ededed] text-2xl tracking-tight w-[56rem] leading-snug;
+    @apply text-[#ededed] text-2xl tracking-tight xl:w-[56rem] leading-snug;
 }

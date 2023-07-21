@@ -20,7 +20,7 @@ const Home = () => {
           <div className={styles['illustration-09']}></div>
         </div>
         
-        {/* <div className={styles.greeting}>
+        <div className={styles.greeting}>
           <div className={styles.headline}>
             Hey! Welcome to my little space on the Internet. I live and I code.
           </div>
@@ -34,7 +34,7 @@ const Home = () => {
             I am always passionate about learning new technologies and building cool stuff.
             You will be able to find some of my works here. They are rarely in the same areas as my interests are always changing from time to time. I hope you will find something interesting.
           </div>
-        </div> */}
+        </div>
       </Container>
     </>
   )
