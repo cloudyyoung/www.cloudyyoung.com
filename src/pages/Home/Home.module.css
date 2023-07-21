@@ -1,11 +1,18 @@
 
 .mesh-grad {
-    @apply absolute w-[110%] -z-50 -top-[18%] -right-[22%];
+    @apply absolute hidden lg:inline w-[88%] h-[88%] -z-50 top-0 right-0;
     background-image: url("../../assets/Mesh-Grad.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top right;
-    height: max(52rem, 110%);
+}
+
+.mesh-grad-sm {
+    @apply absolute lg:hidden w-full h-[34rem] -top-[4rem] left-0 -z-50;
+    background-image: url("../../assets/Mesh-Grad-sm.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 
 .illustrations {
