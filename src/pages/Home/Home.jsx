@@ -9,7 +9,7 @@ const Home = () => {
       <div className={styles['mesh-grad']}></div>
       <div className={styles['mesh-grad-sm']}></div>
       
-      <Container className='pt-[22rem] xl:pt-[12rem] relative'>
+      <Container className='pt-[22rem] lg:pt-[16rem] xl:pt-[12rem] relative'>
         <Hero
           title="Yunfan Yang,"
           subtitle="a Software Development Intern at AGvisorPRO Inc, and a Computer Science student at the University of Calgary."

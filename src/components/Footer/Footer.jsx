@@ -4,7 +4,7 @@ const Footer = () => {
     max-w-full xl:max-w-10xl 
     mx-auto 
     px-6 
-    my-8 xl:my-20 
+    my-16 xl:my-20 
     flex flex-col md:flex-row md:justify-between md:items-center
     font-heading 
     text-md lg:text-lg xl:text-xl

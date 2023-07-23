@@ -1,6 +1,6 @@
 
 .mesh-grad {
-    @apply absolute hidden lg:inline w-[88%] h-[88%] -z-50 top-0 right-0;
+    @apply absolute hidden lg:inline lg:w-[50rem] lg:h-[40rem] xl:w-[60rem] xl:h-[50rem] -z-50 top-0 right-0;
     background-image: url("../../assets/Mesh-Grad.png");
     background-size: contain;
     background-repeat: no-repeat;
