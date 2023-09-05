@@ -12,11 +12,13 @@ const Home = () => {
       <Container className='pt-[22rem] lg:pt-[16rem] xl:pt-[12rem] relative'>
         <Hero
           title="Yunfan Yang,"
-          subtitle="a Software Development Intern at AGvisorPRO Inc, and a Computer Science student at the University of Calgary."
+          subtitle="an Honours Computer Science student at the University of Calgary and a Software Development Intern at AGvisorPRO Inc."
         />
 
         <div className={styles.illustrations}>
-          <div className={styles['illustration-02']}></div>
+          <div className={styles['illustration-02']}>
+            <iframe className='h-full w-full' src="https://www.youtube.com/embed/mYghB5Aww4A?si=sZu73Wj5zbVLjMsM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
           <div className={styles['illustration-09']}></div>
         </div>
         
