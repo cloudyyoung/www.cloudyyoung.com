@@ -14,5 +14,5 @@
 @tailwind utilities;
 
 body {
-    @apply bg-[#070607] text-white overflow-x-hidden;
+    @apply bg-[#fff] text-black overflow-x-hidden;
 }
