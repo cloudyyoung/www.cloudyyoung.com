@@ -3,8 +3,12 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import {useEffectOnce} from 'react-use'
+import MouseFollower from "mouse-follower";
+import gsap from "gsap";
 
 import './App.css'
+import 'mouse-follower/dist/mouse-follower.min.css'
 
 import Home from "./pages/Home";
 
@@ -30,6 +34,14 @@ function App() {
   }
 
   requestAnimationFrame(raf)
+
+  useEffectOnce(() => {
+    MouseFollower.registerGSAP(gsap);
+    const cursor = new MouseFollower({
+      visible: true,
+      speed: 0.9,
+    });
+  })
 
   return (
     <>
