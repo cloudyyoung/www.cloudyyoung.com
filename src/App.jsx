@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import './App.css'
 
@@ -19,9 +20,22 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const lenis = useLenis(({ scroll }) => {
+    // called every scroll
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+
   return (
     <>
-      <RouterProvider router={router} />
+      <ReactLenis lenis={lenis} root>
+        <RouterProvider router={router} />
+      </ReactLenis>
     </>
   );
 }
