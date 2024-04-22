@@ -1,6 +1,8 @@
 import Container from '../../components/Container';
 import styles from "./Home.module.css"
 
+import hera from './glass-sculpture-of-hera.png'
+
 const Home = () => {
   return (
     <>
@@ -71,6 +73,10 @@ const Home = () => {
         <div className={styles.footer}>
           <div>&copy; 2024 Yunfan Yang</div>
           <div className={styles.footer_poem}>There shall come a day with gusty winds to help cleave through the waves, <br />to make full sail and an open boundless sea navigate.</div>
+        </div>
+
+        <div className={styles.illustration}>
+          <img src={hera}></img>
         </div>
       </Container>
     </>
