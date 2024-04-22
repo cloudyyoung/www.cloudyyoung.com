@@ -6,7 +6,7 @@
 
 .name {
     font-family: 'Inter Tight', sans-serif;
-    @apply font-extrabold mb-2 text-4xl
+    @apply font-extrabold mb-2 text-4xl w-fit
 }
 
 .headline {

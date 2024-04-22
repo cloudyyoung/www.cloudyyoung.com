@@ -40,6 +40,8 @@ function App() {
     const cursor = new MouseFollower({
       visible: true,
       speed: 0.9,
+      skewing: 2,
+      container: document.body,
     });
   })
 

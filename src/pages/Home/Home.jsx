@@ -2,13 +2,14 @@ import Container from '../../components/Container';
 import styles from "./Home.module.css"
 
 import hera from './glass-sculpture-of-hera.png'
+import avatar from './avatar.jpg'
 
 const Home = () => {
   return (
     <>
       <Container className='pt-4 relative flex flex-col gap-12'>
         <div className={styles.hero}>
-          <div className={styles.name}>Yunfan Yang</div>
+          <div className={styles.name} data-cursor-img={avatar}>Yunfan Yang</div>
           <div className={styles.headline}>Software Development Intern at AGvisorPRO</div>
           <div className={styles.headline}>Bachelor (Honours) of Science in Computer Science</div>
         </div>
