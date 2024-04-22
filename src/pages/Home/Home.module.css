@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/inter-tight');
 
 .hero {
-    @apply text-center;
+    @apply text-left;
 }
 
 .name {
@@ -15,7 +15,7 @@
 
 .title {
     font-family: 'Inter Tight', sans-serif;
-    @apply text-2xl font-bold my-2 text-center;
+    @apply text-2xl font-bold my-2 text-left;
 }
 
 .table{
@@ -28,7 +28,6 @@
             grid-cols-1 flex flex-col py-4;
 }
 
-
 .table_row_name {
     @apply lg:col-span-2 grid-rows-1 hyphens-auto italic lg:not-italic;
 }
@@ -39,4 +38,8 @@
 
 .table_row_description {
     @apply lg:col-span-1 grid-rows-1 hyphens-auto;
+}
+
+.area_of_interest {
+    @apply text-left;
 }

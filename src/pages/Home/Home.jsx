@@ -29,6 +29,17 @@ const Home = () => {
             }
           </div>
         </div>
+
+        <div className={styles.area_of_interest}>
+          <div className={styles.title}>Area of Interests</div>
+          <div className={styles.interests}>
+            <div className={styles.interest}>Software Maintainability</div>
+            <div className={styles.interest}>Software/Web Development</div>
+            <div className={styles.interest}>User Interface Design</div>
+            <div className={styles.interest}>Workflow Automation</div>
+            <div className={styles.interest}>Cats</div>
+          </div>
+        </div>
       </Container>
     </>
   )
