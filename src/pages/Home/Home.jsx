@@ -14,7 +14,7 @@ const Home = () => {
         <div className={styles.bio}>
           <p>Yunfan focuses mainly on software development, research projects and some self-teaching designs.</p>
           <p>As a computer science student, his disciplines drive him to explore all different areas in the fields of computer science, data science, and software engineering.</p>
-          <p>He is always passionate about learning new technologies and building fun project. Some of his works can be found here, and hopes you will find something interesting.</p>
+          <p>He is always passionate about learning new technologies and building fun projects. Some of his works can be found here, and hopes you will find something interesting.</p>
         </div>
 
         <div className='recent_works'>
@@ -54,7 +54,18 @@ const Home = () => {
 
         <div className='readings'>
           <div className={styles.title}>Recent Readings</div>
-          <div>None found.</div>
+          <div className={styles.table}>
+            {
+              readings.map((reading, index) => (
+                <div key={index} className={styles.table_row}>
+                  <div className={styles.table_row_name}>
+                    {reading.title}
+                  </div>
+                  <div className={styles.table_row_description}>{reading.auhtors}</div>
+                </div>
+              ))
+            }
+          </div>
         </div>
 
         <div className={styles.footer}>
@@ -110,6 +121,17 @@ const recentWorks = [
     authors: "Contributed by Richard Zach, Ricky Bhatti and Daniel Sabourov",
     date: "December 2020 - March 2023",
     type: "Project",
+  }
+]
+
+const readings = [
+  {
+    title: "The INTP: Personality, Careers, Relationships & the Quest for Truth and Meaning",
+    auhtors: "A.J. Drenth",
+  },
+  {
+    title: "Word Power Made Easy",
+    auhtors: "Norman Lewis",
   }
 ]
 

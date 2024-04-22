@@ -29,7 +29,7 @@
 .table_row{
     @apply w-full text-left 
             lg:grid lg:grid-cols-5 lg:grid-rows-1 lg:gap-4 lg:py-1 
-            grid-cols-1 flex flex-col py-4;
+            grid-cols-1 flex flex-col py-2;
 }
 
 .table_row_name {
