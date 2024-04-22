@@ -15,7 +15,7 @@
 
 .title {
     font-family: 'Inter Tight', sans-serif;
-    @apply text-2xl font-bold my-2 text-left;
+    @apply text-2xl font-bold lg:my-2 text-left;
 }
 
 .table{
@@ -42,4 +42,16 @@
 
 .area_of_interest {
     @apply text-left;
+}
+
+.interests {
+    @apply flex flex-col lg:flex-row lg:gap-8;
+}
+
+.footer {
+    @apply italic leading-4 space-y-2;
+}
+
+.footer_poem {
+    @apply text-gray-400;
 }

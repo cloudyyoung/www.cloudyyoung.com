@@ -30,6 +30,11 @@ const Home = () => {
           </div>
         </div>
 
+        <div className='posts'>
+          <div className={styles.title}>Posts</div>
+          <div>None found.</div>
+        </div>
+
         <div className={styles.area_of_interest}>
           <div className={styles.title}>Area of Interests</div>
           <div className={styles.interests}>
@@ -40,10 +45,22 @@ const Home = () => {
             <div className={styles.interest}>Cats</div>
           </div>
         </div>
+
+        <div className='readings'>
+          <div className={styles.title}>Recent Readings</div>
+          <div>None found.</div>
+        </div>
+
+        <div className={styles.footer}>
+          <div>&copy; 2024 Yunfan Yang</div>
+          <div className={styles.footer_poem}>There shall come a day with gusty winds to help cleave through the waves, <br />to make full sail and an open boundless sea navigate.</div>
+        </div>
       </Container>
     </>
   )
 }
+
+// https://28utscprojects.wordpress.com/2011/01/11/082/
 
 const recentWorks = [
   {
