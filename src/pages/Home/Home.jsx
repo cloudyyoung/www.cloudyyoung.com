@@ -15,7 +15,7 @@ const Home = () => {
         </div>
 
         <div className={styles.bio}>
-          <p>Yunfan focuses mainly on software development, research projects and some self-teaching designs.</p>
+          <p>Yunfan focuses mainly on software development, research projects and amateur ui designs.</p>
           <p>As a computer science student, his disciplines drive him to explore all different areas in the fields of computer science, data science, and software engineering.</p>
           <p>He is always passionate about learning new technologies and building fun projects. Some of his works can be found here, and hopes you will find something interesting.</p>
         </div>
