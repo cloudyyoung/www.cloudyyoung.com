@@ -1,46 +1,72 @@
+@import url('https://fonts.cdnfonts.com/css/inter-tight');
 
-.mesh-grad {
-    @apply absolute hidden lg:inline lg:w-[50rem] lg:h-[40rem] xl:w-[60rem] xl:h-[50rem] -z-50 top-0 right-0;
-    background-image: url("../../assets/Mesh-Grad.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top right;
+.hero {
+    @apply text-left;
 }
 
-.mesh-grad-sm {
-    @apply absolute lg:hidden w-full h-[34rem] -top-[4rem] left-0 -z-50;
-    background-image: url("../../assets/Mesh-Grad-sm.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top left;
+.name {
+    @apply font-extrabold mb-2 text-4xl w-fit font-sans
 }
 
-.illustrations {
-    @apply grid grid-cols-3 gap-8 my-[6rem];
+.prononce {
+    @apply text-xl ml-2 font-serif
+
 }
 
-.illustration-02 {
-    @apply w-full h-[36rem] col-span-3 lg:col-span-2;
-    background-image: url("../../assets/02.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+.headline {
+    @apply text-2xl leading-7
 }
 
-.illustration-09 {
-    @apply w-full h-[36rem] col-span-1 hidden lg:inline;
-    background-image: url("../../assets/09.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+.bio {
+    @apply leading-5 italic
 }
 
-.greeting {
-    @apply flex flex-col gap-4 my-24 pt-8 border-t-2 border-[#bcbcbc];
+.title {
+    @apply text-2xl font-bold lg:my-2 text-left font-sans
 }
 
-.greeting .headline {
-    @apply font-heading text-3xl font-medium lg:text-5xl lg:font-normal leading-tight mb-4 lg:w-[52rem] tracking-tight;
+.table{
+    @apply w-full flex flex-col text-base divide-y
 }
 
-.greeting .bio {
-    @apply text-[#ededed] text-lg lg:text-2xl tracking-tight lg:w-[56rem] leading-snug;
+.table_row{
+    @apply w-full text-left 
+            lg:grid lg:grid-cols-5 lg:grid-rows-1 lg:gap-4 lg:py-1 
+            grid-cols-1 flex flex-col py-2
+}
+
+.table_row_name {
+    @apply lg:col-span-2 grid-rows-1 hyphens-auto italic lg:not-italic
+}
+
+.table_row_name_type {
+    @apply text-gray-400 ml-2 text-sm
+}
+
+.table_row_description {
+    @apply lg:col-span-1 grid-rows-1 hyphens-auto
+}
+
+.area_of_interest {
+    @apply text-left
+}
+
+.interests {
+    @apply flex flex-col lg:flex-row lg:gap-8
+}
+
+.footer {
+    @apply italic leading-4 space-y-2
+}
+
+.footer_poem {
+    @apply text-gray-400
+}
+
+.illustration {
+    @apply mt-2 -mb-24 -z-50 flex justify-center items-center
+}
+
+.hera {
+    @apply h-fit w-[14rem] lg:w-[20rem]
 }
