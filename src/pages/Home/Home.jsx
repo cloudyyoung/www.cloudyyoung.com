@@ -14,7 +14,7 @@ const Home = () => {
             <span className={styles.prononce}>(he/him)</span>
           </div>
           <div className={styles.headline}>Software Development Intern at AGvisorPRO</div>
-          <div className={styles.headline}>Honours BSc in Computer Science</div>
+          <div className={styles.headline}>Honours BSc in Computer Science at the University of Calgary</div>
         </div>
 
         <div className={styles.bio}>
