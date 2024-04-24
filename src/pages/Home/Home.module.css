@@ -68,5 +68,5 @@
 }
 
 .hera {
-    @apply h-fit w-[14rem] lg:w-[20rem] opacity-90
+    @apply h-fit w-[14rem] lg:w-[20rem]
 }
