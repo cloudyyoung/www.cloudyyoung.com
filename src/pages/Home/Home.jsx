@@ -80,7 +80,9 @@ const Home = () => {
         </div>
 
         <div className={styles.illustration}>
-          <img src={hera}></img>
+          <div className={styles.hera}>
+            <img src={hera}></img>
+          </div>
         </div>
       </Container>
     </>
