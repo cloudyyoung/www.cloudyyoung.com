@@ -2,8 +2,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
-import {useEffectOnce} from 'react-use'
+import { ReactLenis } from '@studio-freight/react-lenis'
+import { useEffectOnce } from 'react-use'
+import { useRef } from 'react'
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 
@@ -24,16 +25,16 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
+  const lenisRef = useRef()
+  useEffectOnce(() => {
+    function update(time) {
+      lenisRef.current?.lenis?.raf(time * 700)
+    }
+  
+    gsap.ticker.add(update)
+  
+    return () => gsap.ticker.remove(update)
   })
-
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
 
   useEffectOnce(() => {
     MouseFollower.registerGSAP(gsap);
@@ -43,11 +44,13 @@ function App() {
       skewing: 2,
       container: document.body,
     });
+
+    return () => cursor.destroy();
   })
 
   return (
     <>
-      <ReactLenis lenis={lenis} root>
+      <ReactLenis ref={lenisRef} autoRaf={false} root>
         <RouterProvider router={router} />
       </ReactLenis>
     </>
