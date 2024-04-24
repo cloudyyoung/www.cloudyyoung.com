@@ -9,9 +9,12 @@ const Home = () => {
     <>
       <Container className='pt-4 relative flex flex-col gap-12'>
         <div className={styles.hero}>
-          <div className={styles.name} data-cursor-img={avatar}>Yunfan Yang</div>
+          <div className={styles.name} data-cursor-img={avatar}>
+            Yunfan Yang
+            <span className={styles.prononce}>(he/him)</span>
+          </div>
           <div className={styles.headline}>Software Development Intern at AGvisorPRO</div>
-          <div className={styles.headline}>Bachelor (Honours) of Science in Computer Science</div>
+          <div className={styles.headline}>Honours BSc in Computer Science</div>
         </div>
 
         <div className={styles.bio}>
