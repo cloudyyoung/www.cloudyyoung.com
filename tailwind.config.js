@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter Tight", "sans-serif"],
-        serif: ["Linux Libertine Display O", "serif"],
+        sans: ["Host Grotesk", "sans-serif"],
+        serif: ["EB Garamond", "serif"],
       },
       maxWidth: {
         "8xl": "88rem",

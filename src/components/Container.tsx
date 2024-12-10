@@ -9,7 +9,7 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 const Container = ({ children, className, ...args }: ContainerProps) => {
     className = className || ''
     return (
-        <div className={classnames('max-w-full xl:max-w-8xl mx-auto my-24 px-4', className)} {...args}>
+        <div className={classnames('max-w-full mx-auto my-6 px-6', className)} {...args}>
             {children}
         </div>
     )
