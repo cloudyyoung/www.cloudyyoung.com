@@ -13,5 +13,5 @@
 @tailwind utilities;
 
 body {
-  @apply overflow-x-hidden min-h-[100vh];
+  @apply overflow-x-hidden;
 }
