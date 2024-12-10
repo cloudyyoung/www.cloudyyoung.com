@@ -14,7 +14,7 @@ const Container = ({ children, className, ...args }: ContainerProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    gsap.fromTo(ref.current, { opacity: 0 }, { opacity: 1, duration: 1 })
+    gsap.fromTo(ref.current, { opacity: 0 }, { opacity: 1, duration: 2 })
   }, { dependencies: [location] })
 
   className = className || ''
