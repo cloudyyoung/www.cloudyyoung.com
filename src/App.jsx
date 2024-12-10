@@ -10,7 +10,8 @@ import { useGSAP } from "@gsap/react";
 import './App.css'
 import 'mouse-follower/dist/mouse-follower.min.css'
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import Info from "./pages/Info/Info";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/info",
+    element: <Info />,
   }
 ]);
 

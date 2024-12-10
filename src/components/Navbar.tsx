@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export interface NavbarProps {
   title: string
@@ -9,7 +10,7 @@ const Navbar = ({ title }: NavbarProps) => {
     <div className='w-full flex justify-between text-sm uppercase'>
       <div>YY</div>
       <div>{title}</div>
-      <div>INFO</div>
+      <div><Link to='/info'>INFO</Link></div>
     </div>
   )
 }
