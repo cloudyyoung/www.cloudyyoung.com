@@ -13,7 +13,7 @@ const Home = () => {
         <Navbar title="home" />
 
         <div className='absolute top-0 left-0 right-0 bottom-0'>
-          <Spline scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100946" />
         </div>
 
         <div className='font-medium text-3xl w-full fixed left-0 bottom-0 p-6 flex justify-between pointer-events-none'>

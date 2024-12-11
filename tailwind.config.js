@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Host Grotesk", "sans-serif"],
+        sans: ["Hanken Grotesk", "sans-serif"],
         serif: ["EB Garamond", "serif"],
       },
       maxWidth: {
