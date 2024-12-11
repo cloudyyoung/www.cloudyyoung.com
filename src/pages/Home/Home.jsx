@@ -18,7 +18,7 @@ const Home = () => {
 
         <div className='font-medium text-3xl w-full fixed left-0 bottom-0 p-6 flex justify-between pointer-events-none'>
           <div>
-            <div className='uppercase'>Calgary YYC</div>
+            <div className='uppercase'>Calgary Canada</div>
             <div className='uppercase'>{now}</div>
           </div>
           <div className='text-right'>
