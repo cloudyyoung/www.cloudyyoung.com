@@ -34,16 +34,16 @@ const Home = () => {
       <Container className='flex flex-col gap-12'>
         <Navbar title="home" />
 
-        <div className='absolute top-0 left-0 right-0 bottom-0'>
+        <div className='-m-6 -mt-[2rem]'>
           <Spline
             className='spline'
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12101117"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100205"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
           />
         </div>
 
-        <div className='footer font-medium text-3xl w-full fixed left-0 bottom-0 p-6 flex justify-between pointer-events-none'>
+        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
           <div>
             <div className='uppercase'>Calgary Canada</div>
             <div className='uppercase'>{now}</div>
