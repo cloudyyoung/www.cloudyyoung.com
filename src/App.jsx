@@ -31,6 +31,7 @@ const router = createBrowserRouter([
 function App() {
   new Lenis({
     autoRaf: true,
+    smoothWheel: true,
   });
 
   useGSAP(() => {
@@ -42,6 +43,10 @@ function App() {
       container: document.body,
     });
   });
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
 
   return (
     <>
