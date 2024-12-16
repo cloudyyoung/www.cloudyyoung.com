@@ -34,22 +34,41 @@ const Home = () => {
       <Container className='flex flex-col gap-12'>
         <Navbar title="home" />
 
-        <div className='-m-6 -mt-[2rem]'>
+        <div className='-m-6 -mt-[2rem] relative'>
           <Spline
             className='spline'
             scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100205"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
           />
+          <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
 
-        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
+        {/* <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
           <div>
             <div className='uppercase'>Calgary Canada</div>
             <div className='uppercase'>{now}</div>
           </div>
           <div className='text-right'>
           </div>
+        </div> */}
+
+        <div className='py-40 space-y-40'>
+          <div className='flex justify-center'>
+            <div className='w-1/3 text-5xl font-serif leading-tight'>
+              I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.
+            </div>
+          </div>
+          <div className='text-8xl font-semibold uppercase text-center leading-normal'>
+            <div className='-ml-32'>Engineering</div>
+            <div className='-mr-64'>UI/UX Design</div>
+            <div className='-ml-56'>Data Science</div>
+            <div className='-mr-48'>Projects</div>
+          </div>
+        </div>
+
+        <div className='py-40'>
+          
         </div>
       </Container>
     </>
