@@ -4,10 +4,10 @@ export const getTime = () => {
   const now = new Date();
   const nowString = now.toLocaleTimeString("en-CA", {
     timeZone: "America/Edmonton",
-    hour: "2-digit",
+    hour: "numeric",
     minute: "2-digit",
     second: "2-digit",
-    hour12: false,
+    // hour12: false,
   });
   return nowString;
 };
