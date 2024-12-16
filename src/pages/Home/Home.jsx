@@ -60,9 +60,9 @@ const Home = () => {
             </div>
           </div>
           <div className='text-8xl font-semibold uppercase text-center leading-normal'>
-            <div className='-ml-32'>Engineering</div>
+            <div className='-ml-10'>Engineering</div>
             <div className='-mr-64'>UI/UX Design</div>
-            <div className='-ml-56'>Data Science</div>
+            <div className='-ml-64'>Research</div>
             <div className='-mr-48'>Projects</div>
           </div>
         </div>
