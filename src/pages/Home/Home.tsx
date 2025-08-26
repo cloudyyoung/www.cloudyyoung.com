@@ -33,27 +33,27 @@ const Home = () => {
 
   return (
     <>
-      <Container className='flex flex-col gap-12'>
+      <Container>
         <Navbar title="home" />
 
-        <div className='-m-6 -mt-[2rem] relative'>
+        <div className='-m-6 -mt-[6rem] h-screen w-screen relative block'>
           <Spline
             className='spline'
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100205"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100208"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
           />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
 
-        {/* <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
+        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem] hidden'>
           <div>
             <div className='uppercase'>Calgary Canada</div>
             <div className='uppercase'>{now}</div>
           </div>
           <div className='text-right'>
           </div>
-        </div> */}
+        </div>
 
         <div className='py-40 space-y-40'>
           <div className='flex justify-center'>

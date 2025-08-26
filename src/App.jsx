@@ -1,11 +1,13 @@
+import { useRef } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import Lenis from 'lenis'
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ScrollSmoother from "gsap/ScrollSmoother";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import './App.css'
 import 'mouse-follower/dist/mouse-follower.min.css'
@@ -28,29 +30,28 @@ const router = createBrowserRouter([
   }
 ]);
 
+gsap.registerPlugin(useGSAP, ScrollSmoother, ScrollTrigger);
+
 function App() {
-  new Lenis({
-    autoRaf: true,
-    smoothWheel: true,
-  });
+  const container = useRef(null);
+  const content = useRef(null);
 
   useGSAP(() => {
-    MouseFollower.registerGSAP(gsap);
-    new MouseFollower({
-      visible: true,
-      speed: 0.9,
-      skewing: 2,
-      container: document.body,
+    ScrollSmoother.create({
+      wrapper: container.current,
+      content: content.current,
+      smooth: 1.2,
+      effects: true,
     });
-  });
-
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
+  }, { dependencies: [], scope: container });
 
   return (
     <>
-      <RouterProvider router={router} />
+      <div ref={container}>
+        <div ref={content}>
+          <RouterProvider router={router} />
+        </div>
+      </div>
     </>
   );
 }

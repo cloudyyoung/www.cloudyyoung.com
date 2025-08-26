@@ -19,7 +19,7 @@ const Container = ({ children, className, ...args }: ContainerProps) => {
 
   className = className || ''
   return (
-    <div className={classnames('container max-w-full mx-auto my-6 px-6', className)} {...args} ref={ref}>
+    <div className={classnames('container max-w-full mx-auto my-6 px-6 flex flex-col', className)} {...args} ref={ref}>
       {children}
     </div>
   )
