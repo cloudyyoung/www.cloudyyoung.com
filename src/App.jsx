@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
 
 import './App.css'
 import 'mouse-follower/dist/mouse-follower.min.css'
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
   }
 ]);
 
-gsap.registerPlugin(useGSAP, ScrollSmoother, ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollSmoother, ScrollTrigger, SplitText);
 
 function App() {
   const container = useRef(null);

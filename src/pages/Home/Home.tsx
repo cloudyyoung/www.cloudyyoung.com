@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import clsx from 'clsx';
+import SplitText from "gsap/SplitText";
 
 import Container from '../../components/Container';
 import Navbar from '../../components/Navbar';
@@ -29,6 +30,26 @@ const Home = () => {
       gsap.fromTo('.navbar', { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 1.2 })
       gsap.fromTo('.footer', { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 1.2 })
     }
+
+    SplitText.create(".description", {
+      type: "lines, words, chars",
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          duration: 1,
+          filter: 'blur(10px)',
+          autoAlpha: 0,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.description',
+            scrub: true,
+            start: "clamp(top center)",
+            end: "clamp(bottom center)"
+          }
+        });
+      }
+    });
+
   }, { dependencies: [show, load] })
 
   return (
@@ -56,8 +77,9 @@ const Home = () => {
 
         <div className='py-40 space-y-40'>
           <div className='flex justify-center'>
-            <div className='max-w-3xl text-5xl font-serif leading-tight'>
-              I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.
+            <div className='description max-w-3xl text-5xl font-serif leading-tight'>
+              <p>I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.</p>
+              <p>My work is driven by a passion for solving real-world problems with <i>elegant, maintainable solutions</i>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
             </div>
           </div>
           <div className='text-8xl font-semibold uppercase text-center leading-normal'>
