@@ -36,10 +36,9 @@ const Home = () => {
       <Container>
         <Navbar title="home" />
 
-        <div className='-m-6 -mt-[6rem] h-screen w-screen relative block'>
+        <div className='-m-6 -mt-[5rem] h-screen w-screen relative block'>
           <Spline
-            className='spline'
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100208"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100211"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
           />
@@ -57,7 +56,7 @@ const Home = () => {
 
         <div className='py-40 space-y-40'>
           <div className='flex justify-center'>
-            <div className='w-1/3 text-5xl font-serif leading-tight'>
+            <div className='max-w-3xl text-5xl font-serif leading-tight'>
               I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.
             </div>
           </div>

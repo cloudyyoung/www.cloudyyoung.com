@@ -40,7 +40,7 @@ function App() {
     ScrollSmoother.create({
       wrapper: container.current,
       content: content.current,
-      smooth: 1.2,
+      smooth: 0.8,
       effects: true,
     });
   }, { dependencies: [], scope: container });
