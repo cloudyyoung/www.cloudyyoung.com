@@ -51,7 +51,47 @@ const Home = () => {
       }
     });
 
+    SplitText.create(".contact", {
+      type: "lines, words, chars",
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          duration: 2,
+          x: 2,
+          filter: 'blur(10px)',
+          autoAlpha: 0,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.contact',
+            scrub: 1,
+            start: "clamp(top 70%)",
+            end: "clamp(bottom 70%)"
+          }
+        });
+      }
+    });
+
+    gsap.from('.contact-link', {
+      autoAlpha: 0,
+      y: 24,
+      duration: 6,
+      stagger: 2,
+      filter: 'blur(10px)',
+      scrollTrigger: {
+        trigger: '.contact-link',
+        scrub: 1,
+        start: "clamp(top 70%)",
+        end: "clamp(bottom 60%)"
+      }
+    });
+
   }, { dependencies: [show, load] })
+
+  const contactLinks = [
+    { label: 'Email', href: 'mailto:i@yunfanyang.com', display: 'i@yunfanyang.com' },
+    { label: 'GitHub', href: 'https://github.com/cloudyyoung', display: '@cloudyyoung' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/yunfan-yang-cy', display: 'Yunfan Yang' },
+  ]
 
   return (
     <>
@@ -94,17 +134,15 @@ const Home = () => {
         </div> */}
 
         <div className='py-30 flex justify-center'>
-          <div className='contact max-w-3xl w-full'>
-            <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
-            <div className='contact-heading text-5xl font-serif leading-tight mb-16'>
-              Let's work together — reach out and say hello.
+          <div className='max-w-3xl w-full'>
+            <div className='contact mb-16'>
+              <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
+              <div className='contact-content text-5xl font-serif leading-tight'>
+                Let's work together — reach out and say hello.
+              </div>
             </div>
             <div className='flex flex-col gap-4'>
-              {[
-                { label: 'Email', href: 'mailto:i@yunfanyang.com', display: 'i@yunfanyang.com' },
-                { label: 'GitHub', href: 'https://github.com/cloudyyoung', display: '@cloudyyoung' },
-                { label: 'LinkedIn', href: 'https://linkedin.com/in/yunfan-yang-cy', display: 'Yunfan Yang' },
-              ].map(({ label, href, display }) => (
+              {contactLinks.map(({ label, href, display }) => (
                 <a
                   key={label}
                   href={href}
@@ -119,6 +157,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className='h-[50rem]'></div>
       </Container>
     </>
   )
