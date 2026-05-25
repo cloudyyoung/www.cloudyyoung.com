@@ -1,8 +1,6 @@
-import React, { useRef } from 'react';
 import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
-import clsx from 'clsx';
 import SplitText from "gsap/SplitText";
 
 import Container from '../../components/Container';
@@ -163,42 +161,6 @@ const Home = () => {
     </>
   )
 }
-
-const KeywordButton = ({ children, className }) => {
-  const { contextSafe } = useGSAP({ scope: '.keyword-button' });
-  const lineRef = useRef(null);
-
-  const handleMouseEnter = contextSafe(() => {
-    gsap.killTweensOf(lineRef.current);
-    gsap.fromTo(
-      lineRef.current,
-      { width: "0%", left: "0%" },
-      { width: "100%", duration: 0.5, ease: "power2.out" }
-    );
-  });
-
-  const handleMouseLeave = contextSafe(() => {
-    gsap.killTweensOf(lineRef.current);
-    gsap.fromTo(
-      lineRef.current,
-      { width: '100%', left: "0%" },
-      { left: "100%", width: "0%", duration: 0.5, ease: "power2.in" });
-  });
-
-  return (
-    <div className='keyword-button'>
-      <a
-        className={clsx('text-8xl font-semibold uppercase group relative cursor-pointer', className)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {children}
-        <span ref={lineRef} className="absolute left-0 top-[48%] h-2 w-0 bg-black pointer-events-none"></span>
-      </a>
-    </div>
-  )
-}
-
 // https://28utscprojects.wordpress.com/2011/01/11/082/
 
 export default Home
