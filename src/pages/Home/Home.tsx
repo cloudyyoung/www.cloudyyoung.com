@@ -44,8 +44,8 @@ const Home = () => {
           scrollTrigger: {
             trigger: '.intro',
             scrub: 1,
-            start: "clamp(top center)",
-            end: "clamp(bottom center)"
+            start: "clamp(top 70%)",
+            end: "clamp(bottom 70%)"
           }
         });
       }
