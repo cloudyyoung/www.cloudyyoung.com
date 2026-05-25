@@ -2,11 +2,14 @@ import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import SplitText from "gsap/SplitText";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import Container from '../../components/Container';
 import Navbar from '../../components/Navbar';
 import { useTime } from '../../utils/useTime';
 import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const Home = () => {
   const [now, timezone] = useTime();
