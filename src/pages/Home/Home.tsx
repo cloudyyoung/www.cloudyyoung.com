@@ -31,7 +31,7 @@ const Home = () => {
       gsap.fromTo('.footer', { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 1.2 })
     }
 
-    SplitText.create(".description", {
+    SplitText.create(".intro", {
       type: "lines, words, chars",
       autoSplit: true,
       onSplit(self) {
@@ -41,7 +41,7 @@ const Home = () => {
           autoAlpha: 0,
           stagger: 0.1,
           scrollTrigger: {
-            trigger: '.description',
+            trigger: '.intro',
             scrub: true,
             start: "clamp(top center)",
             end: "clamp(bottom center)"
@@ -58,11 +58,11 @@ const Home = () => {
         <Navbar title="home" />
 
         <div className='-m-6 -mt-[5rem] h-screen w-screen relative block'>
-          <Spline
+          {/* <Spline
             scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100211"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
-          />
+          /> */}
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
 
@@ -75,23 +75,48 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='py-40 space-y-40'>
-          <div className='flex justify-center'>
-            <div className='description max-w-3xl text-5xl font-serif leading-tight'>
+        <div className='py-40 flex justify-center'>
+          <div className='intro max-w-3xl w-full'>
+            <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
+            <div className='intro-content text-5xl font-serif leading-tight'>
               <p>I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.</p>
               <p>My work is driven by a passion for solving real-world problems with <i>elegant, maintainable solutions</i>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
             </div>
           </div>
-          <div className='text-8xl font-semibold uppercase text-center leading-normal'>
-            <KeywordButton className='-ml-10'>Engineering</KeywordButton>
-            <KeywordButton className='-mr-64'>UI/UX Design</KeywordButton>
-            <KeywordButton className='-ml-64'>Research</KeywordButton>
-            <KeywordButton className='-mr-48'>Projects</KeywordButton>
-          </div>
         </div>
 
-        <div className='py-40'>
+        {/* <div className='py-20 text-8xl font-semibold uppercase text-center leading-normal'>
+          <KeywordButton className='-ml-10'>Engineering</KeywordButton>
+          <KeywordButton className='-mr-64'>UI/UX Design</KeywordButton>
+          <KeywordButton className='-ml-64'>Research</KeywordButton>
+          <KeywordButton className='-mr-48'>Projects</KeywordButton>
+        </div> */}
 
+        <div className='py-40 flex justify-center'>
+          <div className='contact max-w-3xl w-full'>
+            <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
+            <div className='contact-heading text-5xl font-serif leading-tight mb-16'>
+              Let's work together — reach out and say hello.
+            </div>
+            <div className='flex flex-col gap-4'>
+              {[
+                { label: 'Email', href: 'mailto:i@yunfanyang.com', display: 'i@yunfanyang.com' },
+                { label: 'GitHub', href: 'https://github.com/cloudyyoung', display: '@cloudyyoung' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/in/yunfan-yang-cy', display: 'Yunfan Yang' },
+              ].map(({ label, href, display }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='contact-link group flex items-baseline justify-between border-b border-neutral-200 pb-4 hover:border-black transition-colors duration-300'
+                >
+                  <span className='text-sm font-medium uppercase tracking-widest text-neutral-400 group-hover:text-black transition-colors duration-300'>{label}</span>
+                  <span className='text-xl font-medium'>{display}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </>
