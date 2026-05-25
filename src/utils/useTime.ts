@@ -12,22 +12,32 @@ export const getTime = () => {
   return nowString;
 };
 
+export const getTimezone = () => {
+  return Intl.DateTimeFormat("en-CA", { timeZone: "America/Edmonton", timeZoneName: "short" })
+    .formatToParts(new Date())
+    .find((p) => p.type === "timeZoneName")?.value ?? "MT";
+};
+
 export const useTime = (refreshCycle = 100) => {
   // Returns the current time
   // and queues re-renders every `refreshCycle` milliseconds (default: 100ms)
 
   const [now, setNow] = useState(getTime());
+  const [timezone, setTimezone] = useState(getTimezone());
 
   useEffect(() => {
     // Regularly set time in state
-    // (this will cause your component to re-render frequently)
     const intervalId = setInterval(() => setNow(getTime()), refreshCycle);
+    const timezoneId = setInterval(() => setTimezone(getTimezone()), refreshCycle * 10);
 
     // Cleanup interval
-    return () => clearInterval(intervalId);
+    return () => {
+      clearInterval(intervalId)
+      clearInterval(timezoneId)
+    };
 
     // Specify dependencies for useEffect
-  }, [refreshCycle, setInterval, clearInterval, setNow, getTime]);
+  }, [refreshCycle, setInterval, clearInterval, setNow, setTimezone, getTime, getTimezone]);
 
-  return now;
+  return [now, timezone];
 };

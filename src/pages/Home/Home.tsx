@@ -9,7 +9,7 @@ import { useTime } from '../../utils/useTime';
 import { useGSAP } from '@gsap/react';
 
 const Home = () => {
-  const now = useTime();
+  const [now, timezone] = useTime();
   const [load, setLoad] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -69,6 +69,19 @@ const Home = () => {
       }
     });
 
+    gsap.from('.contact-meta', {
+      autoAlpha: 0,
+      y: 8,
+      filter: 'blur(6px)',
+      duration: 2,
+      scrollTrigger: {
+        trigger: '.contact-meta',
+        scrub: 1,
+        start: "clamp(top 70%)",
+        end: "clamp(bottom 70%)"
+      }
+    });
+
     gsap.from('.contact-link', {
       autoAlpha: 0,
       y: 24,
@@ -104,15 +117,6 @@ const Home = () => {
           />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
-        {/* 
-        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
-          <div>
-            <div className='uppercase'>Calgary Canada</div>
-            <div className='uppercase'>{now}</div>
-          </div>
-          <div className='text-right'>
-          </div>
-        </div> */}
 
         <div className='py-30 flex justify-center'>
           <div className='intro max-w-3xl w-full'>
@@ -133,11 +137,14 @@ const Home = () => {
 
         <div className='py-30 flex justify-center'>
           <div className='max-w-3xl w-full'>
-            <div className='contact mb-16'>
+            <div className='contact mt-8'>
               <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
               <div className='contact-content text-5xl font-serif leading-tight'>
                 Let's work together — reach out and say hello.
               </div>
+            </div>
+            <div className='contact-meta mt-8 mb-12 text-sm font-medium uppercase tracking-widest text-neutral-400'>
+              Calgary Alberta, Canada &middot; {timezone} &middot; {now}
             </div>
             <div className='flex flex-col gap-4'>
               {contactLinks.map(({ label, href, display }) => (
