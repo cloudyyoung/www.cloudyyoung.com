@@ -20,24 +20,20 @@ export const getTimezone = () => {
 
 export const useTime = (refreshCycle = 1000) => {
   // Returns the current time
-  // and queues re-renders every `refreshCycle` milliseconds (default: 100ms)
-
   const [now, setNow] = useState(getTime());
-  const [timezone, setTimezone] = useState(getTimezone());
+  const timezone = getTimezone()
 
   useEffect(() => {
     // Regularly set time in state
     const intervalId = setInterval(() => setNow(getTime()), refreshCycle);
-    const timezoneId = setInterval(() => setTimezone(getTimezone()), refreshCycle * 1000);
 
     // Cleanup interval
     return () => {
       clearInterval(intervalId)
-      clearInterval(timezoneId)
     };
 
     // Specify dependencies for useEffect
-  }, [refreshCycle, setInterval, clearInterval, setNow, setTimezone, getTime, getTimezone]);
+  }, [refreshCycle, setInterval, clearInterval, setNow, getTime, getTimezone]);
 
   return [now, timezone];
 };
