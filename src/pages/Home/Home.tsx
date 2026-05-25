@@ -36,13 +36,14 @@ const Home = () => {
       autoSplit: true,
       onSplit(self) {
         return gsap.from(self.words, {
-          duration: 1,
+          duration: 2,
+          x: 2,
           filter: 'blur(10px)',
           autoAlpha: 0,
           stagger: 0.1,
           scrollTrigger: {
             trigger: '.intro',
-            scrub: true,
+            scrub: 1,
             start: "clamp(top center)",
             end: "clamp(bottom center)"
           }
@@ -57,29 +58,29 @@ const Home = () => {
       <Container>
         <Navbar title="home" />
 
-        <div className='-m-6 -mt-[5rem] h-screen w-screen relative block'>
-          {/* <Spline
+        <div className='-m-6 -mb-[10rem] h-screen w-screen relative block'>
+          <Spline
             scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100211"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
-          /> */}
+          />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
-
-        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem] hidden'>
+        {/* 
+        <div className='footer font-medium text-3xl w-full flex justify-between pointer-events-none -mt-[7rem]'>
           <div>
             <div className='uppercase'>Calgary Canada</div>
             <div className='uppercase'>{now}</div>
           </div>
           <div className='text-right'>
           </div>
-        </div>
+        </div> */}
 
-        <div className='py-40 flex justify-center'>
+        <div className='py-30 flex justify-center'>
           <div className='intro max-w-3xl w-full'>
             <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
             <div className='intro-content text-5xl font-serif leading-tight'>
-              <p>I design and build software and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.</p>
+              <p>I design and build softwares and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.</p>
               <p>My work is driven by a passion for solving real-world problems with <i>elegant, maintainable solutions</i>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
             </div>
           </div>
@@ -92,7 +93,7 @@ const Home = () => {
           <KeywordButton className='-mr-48'>Projects</KeywordButton>
         </div> */}
 
-        <div className='py-40 flex justify-center'>
+        <div className='py-30 flex justify-center'>
           <div className='contact max-w-3xl w-full'>
             <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
             <div className='contact-heading text-5xl font-serif leading-tight mb-16'>
