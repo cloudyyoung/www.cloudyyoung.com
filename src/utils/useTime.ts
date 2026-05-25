@@ -18,7 +18,7 @@ export const getTimezone = () => {
     .find((p) => p.type === "timeZoneName")?.value ?? "MT";
 };
 
-export const useTime = (refreshCycle = 100) => {
+export const useTime = (refreshCycle = 1000) => {
   // Returns the current time
   // and queues re-renders every `refreshCycle` milliseconds (default: 100ms)
 
@@ -28,7 +28,7 @@ export const useTime = (refreshCycle = 100) => {
   useEffect(() => {
     // Regularly set time in state
     const intervalId = setInterval(() => setNow(getTime()), refreshCycle);
-    const timezoneId = setInterval(() => setTimezone(getTimezone()), refreshCycle * 10);
+    const timezoneId = setInterval(() => setTimezone(getTimezone()), refreshCycle * 1000);
 
     // Cleanup interval
     return () => {
