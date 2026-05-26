@@ -44,9 +44,9 @@ const Home = () => {
           stagger: 0.1,
           scrollTrigger: {
             trigger: '.intro',
-            scrub: 1,
+            scrub: 0.1,
             start: "clamp(top 70%)",
-            end: "clamp(bottom 70%)"
+            end: "clamp(bottom 60%)"
           }
         });
       }
@@ -66,7 +66,7 @@ const Home = () => {
             trigger: '.contact',
             scrub: 1,
             start: "clamp(top 70%)",
-            end: "clamp(bottom 70%)"
+            end: "clamp(bottom 60%)"
           }
         });
       }
@@ -81,7 +81,7 @@ const Home = () => {
         trigger: '.contact-meta',
         scrub: 1,
         start: "clamp(top 70%)",
-        end: "clamp(bottom 70%)"
+        end: "clamp(bottom 60%)"
       }
     });
 
@@ -114,9 +114,10 @@ const Home = () => {
 
         <div className='-m-6 -mb-[10rem] h-screen w-screen relative block'>
           <Spline
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?12100211"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202605261051"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
+            className='will-change-transform'
           />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
