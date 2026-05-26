@@ -110,7 +110,7 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Navbar title="" />
+        {/* <Navbar title="" /> */}
 
         <div className='-m-6 -mb-[10rem] h-screen w-screen relative block'>
           <Spline
