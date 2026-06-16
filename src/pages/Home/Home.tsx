@@ -129,7 +129,7 @@ const Home = () => {
 
         <div className='-m-6 -mb-[6rem] h-screen w-screen relative block overflow-hidden'>
           <Spline
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606160137"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606160159"
             onLoad={onLoad}
             onSplineFollow={onSplineTriggered}
             onSplineMouseHover={onSplineTriggered}
@@ -183,14 +183,17 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='mt-24 xl:pt-10 text-center flex flex-col justify-center items-center gap-4'>
-          <p className='font-serif text-sm lg:text-md italic text-neutral-400'>
+        <div className='mt-24 xl:pt-10 text-center flex flex-col justify-center items-center gap-8 tracking-tight lg:tracking-normal'>
+          <p className='text-sm lg:text-base'>
+            Copyright &copy; 2026 Yunfan Yang. All rights reserved.
+          </p>
+          <p className='font-serif text-sm lg:text-lg italic text-neutral-400'>
             There shall come a day with gusty winds to help cleave through the waves, <br />
             For me to make full sail and an open boundless sea navigate.
           </p>
 
           <div className='w-full flex flex-row justify-center items-center'>
-            <img src={heraImage} alt="Glass sculpture of Hera" className='w-[20rem] object-cover sticky bottom-0' />
+            <img src={heraImage} alt="Glass sculpture of Hera" className='w-8/12 lg:w-3/12 object-cover sticky bottom-0' />
           </div>
         </div>
       </Container>
