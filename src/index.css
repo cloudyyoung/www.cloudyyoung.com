@@ -1,17 +1,24 @@
-@import url("https://fonts.cdnfonts.com/css/linux-libertine-o");
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
-@tailwind base;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Hanken Grotesk', sans-serif;
+  --font-serif: 'EB Garamond', serif;
+
+  --breakpoint-8xl: 88rem;
+  --breakpoint-9xl: 96rem;
+  --breakpoint-10xl: 104rem;
+}
+
 :root {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   @apply font-sans select-none;
-  font-family: "Linux Libertine Display O", sans-serif;
 }
-
-@tailwind components;
-@tailwind utilities;
 
 body {
   @apply overflow-x-hidden;

@@ -1,16 +1,20 @@
+import { useRef } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import Lenis from 'lenis'
 import MouseFollower from "mouse-follower";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ScrollSmoother from "gsap/ScrollSmoother";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
 
 import './App.css'
 import 'mouse-follower/dist/mouse-follower.min.css'
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import Info from "./pages/Info/Info";
 
 const router = createBrowserRouter([
   {
@@ -20,27 +24,35 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/info",
+    element: <Info />,
   }
 ]);
 
+gsap.registerPlugin(useGSAP, ScrollSmoother, ScrollTrigger, SplitText);
+
 function App() {
-  new Lenis({
-    autoRaf: true,
-  });
+  const container = useRef(null);
+  const content = useRef(null);
 
   useGSAP(() => {
-    MouseFollower.registerGSAP(gsap);
-    new MouseFollower({
-      visible: true,
-      speed: 0.9,
-      skewing: 2,
-      container: document.body,
+    ScrollSmoother.create({
+      wrapper: container.current,
+      content: content.current,
+      smooth: 0.8,
+      effects: true,
     });
-  });
+  }, { dependencies: [], scope: container });
 
   return (
     <>
-      <RouterProvider router={router} />
+      <div ref={container}>
+        <div ref={content}>
+          <RouterProvider router={router} />
+        </div>
+      </div>
     </>
   );
 }

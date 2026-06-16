@@ -1,0 +1,210 @@
+import { useEffect, useState } from 'react';
+import Spline from '@splinetool/react-spline';
+import gsap from 'gsap';
+import SplitText from "gsap/SplitText";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
+
+import Container from '../../components/Container';
+import Navbar from '../../components/Navbar';
+import { useTime } from '../../utils/useTime';
+import heraImage from './glass-sculpture-of-hera.png';
+
+gsap.registerPlugin(SplitText, ScrollTrigger, useGSAP);
+
+const Home = () => {
+  const [now, timezone] = useTime();
+  const [load, setLoad] = useState(false);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
+  const onLoad = () => {
+    setLoad(true);
+  }
+
+  const onSplineTriggered = () => {
+    setShow(true);
+  }
+
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [show])
+
+  useGSAP(() => {
+    gsap.to('.navbar', { y: -100, opacity: 0, duration: 0 })
+    gsap.to('.footer', { y: 100, opacity: 0, duration: 0 })
+    if (show) {
+      gsap.fromTo('.navbar', { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 1.2 })
+      gsap.fromTo('.footer', { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 1.2 })
+    }
+
+    SplitText.create(".intro", {
+      type: "lines, words, chars",
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          duration: 6,
+          x: 8,
+          filter: 'blur(10px)',
+          autoAlpha: 0,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.intro',
+            scrub: 0.1,
+            start: "clamp(top 70%)",
+            end: "clamp(bottom 60%)",
+            once: true,
+          }
+        });
+      }
+    });
+
+    SplitText.create(".contact", {
+      type: "lines, words, chars",
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          duration: 2,
+          x: 2,
+          filter: 'blur(10px)',
+          autoAlpha: 0,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.contact',
+            scrub: 1,
+            start: "clamp(top 70%)",
+            end: "clamp(bottom 60%)",
+            once: true,
+          }
+        });
+      }
+    });
+
+    gsap.fromTo('.contact-meta',
+      { autoAlpha: 0, filter: 'blur(6px)' },
+      {
+        autoAlpha: 1,
+        filter: 'blur(0px)',
+        scrollTrigger: {
+          trigger: '.contact-meta',
+          scrub: 1,
+          start: "clamp(top 70%)",
+          end: "clamp(bottom 60%)",
+          once: true,
+        }
+      }
+    );
+
+    gsap.utils.toArray('.contact-link').forEach((link, i) => {
+      gsap.fromTo(link as Element,
+        { autoAlpha: 0, y: 16 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          ease: 'power2.out',
+          duration: 1 + i * 0.4,
+          scrollTrigger: {
+            trigger: link as Element,
+            start: "top 70%",
+            toggleActions: "play none none none",
+          }
+        }
+      );
+    });
+  }, { dependencies: [show, load] })
+
+  const contactLinks = [
+    { label: 'Email', href: 'mailto:i@yunfanyang.com', display: 'i@yunfanyang.com' },
+    { label: 'GitHub', href: 'https://github.com/cloudyyoung', display: '@cloudyyoung' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/yunfan-yang-cy', display: 'Yunfan Yang' },
+  ]
+
+  return (
+    <>
+      <Container>
+        {/* <Navbar title="" /> */}
+
+        <div className='-m-6 -mb-[6rem] h-screen w-screen relative block overflow-hidden'>
+          <Spline
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606160159"
+            onLoad={onLoad}
+            onSplineFollow={onSplineTriggered}
+            onSplineMouseHover={onSplineTriggered}
+          />
+          <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
+        </div>
+
+        <div className='py-24 flex justify-center'>
+          <div className='intro max-w-3xl w-full'>
+            <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
+            <div className='intro-content text-4xl xl:text-5xl font-serif leading-tight'>
+              <p>I design and build softwares and websites that combine <span className='italic font-medium text-black'>functionality</span> and <span className='italic font-medium text-black'>creativity</span> from idea to implementation.</p>
+              <p><br /></p>
+              <p>My work is driven by a passion for solving real-world problems with <span className='italic font-medium text-black'>elegant and maintainable solutions</span>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className='py-20 text-8xl font-semibold uppercase text-center leading-normal'>
+          <KeywordButton className='-ml-10'>Engineering</KeywordButton>
+          <KeywordButton className='-mr-64'>UI/UX Design</KeywordButton>
+          <KeywordButton className='-ml-64'>Research</KeywordButton>
+          <KeywordButton className='-mr-48'>Projects</KeywordButton>
+        </div> */}
+
+        <div className='py-24 flex justify-center'>
+          <div className='max-w-3xl w-full'>
+            <div className='contact mt-8'>
+              <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
+              <div className='contact-content text-3xl lg:text-4xl font-serif leading-tight'>
+                Let's work together — reach out and say hello.
+              </div>
+            </div>
+            <div className='contact-meta mt-4 mb-12 text-sm font-medium uppercase tracking-widest text-neutral-500 italic'>
+              Calgary, Alberta, Canada &middot; {timezone} &middot; {now}
+            </div>
+            <div className='flex flex-col gap-4'>
+              {contactLinks.map(({ label, href, display }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='contact-link group flex items-baseline justify-between border-b border-neutral-200 pb-4 hover:border-black transition-colors duration-300'
+                >
+                  <span className='text-sm font-medium uppercase tracking-widest text-neutral-400 group-hover:text-black transition-colors duration-300'>{label}</span>
+                  <span className='text-xl font-medium'>{display}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-24 xl:pt-10 text-center flex flex-col justify-center items-center gap-8 tracking-tight lg:tracking-normal'>
+          <p className='text-sm lg:text-base'>
+            Copyright &copy; 2026 Yunfan Yang. All rights reserved.
+          </p>
+          <p className='font-serif text-sm lg:text-lg italic text-neutral-400'>
+            There shall come a day with gusty winds to help cleave through the waves, <br />
+            For me to make full sail and an open boundless sea navigate.
+          </p>
+
+          <div className='w-full flex flex-row justify-center items-center'>
+            <img src={heraImage} alt="Glass sculpture of Hera" className='w-8/12 lg:w-3/12 object-cover sticky bottom-0' />
+          </div>
+        </div>
+      </Container>
+    </>
+  )
+}
+// https://28utscprojects.wordpress.com/2011/01/11/082/
+
+export default Home
