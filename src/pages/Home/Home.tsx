@@ -8,6 +8,7 @@ import { useGSAP } from '@gsap/react';
 import Container from '../../components/Container';
 import Navbar from '../../components/Navbar';
 import { useTime } from '../../utils/useTime';
+import heraImage from './glass-sculpture-of-hera.png';
 
 gsap.registerPlugin(SplitText, ScrollTrigger, useGSAP);
 
@@ -46,7 +47,8 @@ const Home = () => {
             trigger: '.intro',
             scrub: 0.1,
             start: "clamp(top 70%)",
-            end: "clamp(bottom 60%)"
+            end: "clamp(bottom 60%)",
+            once: true,
           }
         });
       }
@@ -66,7 +68,8 @@ const Home = () => {
             trigger: '.contact',
             scrub: 1,
             start: "clamp(top 70%)",
-            end: "clamp(bottom 60%)"
+            end: "clamp(bottom 60%)",
+            once: true,
           }
         });
       }
@@ -81,7 +84,8 @@ const Home = () => {
           trigger: '.contact-meta',
           scrub: 1,
           start: "clamp(top 70%)",
-          end: "clamp(bottom 60%)"
+          end: "clamp(bottom 60%)",
+          once: true,
         }
       }
     );
@@ -95,7 +99,7 @@ const Home = () => {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: '.contact-link',
-          start: "top 60%",
+          start: "top 65%",
           toggleActions: "play none none none"
         }
       });
@@ -117,12 +121,11 @@ const Home = () => {
             scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202605261051"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
-            className='will-change-transform'
           />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
 
-        <div className='py-30 flex justify-center'>
+        <div className='py-20 flex justify-center'>
           <div className='intro max-w-3xl w-full'>
             <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
             <div className='intro-content text-5xl font-serif leading-tight'>
@@ -139,15 +142,15 @@ const Home = () => {
           <KeywordButton className='-mr-48'>Projects</KeywordButton>
         </div> */}
 
-        <div className='py-30 flex justify-center'>
+        <div className='py-20 flex justify-center'>
           <div className='max-w-3xl w-full'>
             <div className='contact mt-8'>
               <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
-              <div className='contact-content text-5xl font-serif leading-tight'>
+              <div className='contact-content text-4xl font-serif leading-tight'>
                 Let's work together — reach out and say hello.
               </div>
             </div>
-            <div className='contact-meta mt-8 mb-12 text-sm font-medium uppercase tracking-widest text-neutral-400'>
+            <div className='contact-meta mt-2 mb-8 text-sm font-medium uppercase tracking-widest text-neutral-500 italic'>
               Calgary, Alberta, Canada &middot; {timezone} &middot; {now}
             </div>
             <div className='flex flex-col gap-4'>
@@ -167,7 +170,16 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='h-[50rem]'></div>
+        <div className='mt-20 pt-10 text-center flex flex-col justify-center items-center gap-4'>
+          <p className='font-serif text-md italic text-neutral-400'>
+            There shall come a day with gusty winds to help cleave through the waves, <br />
+            For me to make full sail and an open boundless sea navigate.
+          </p>
+
+          <div className='w-full flex flex-row justify-center items-center'>
+            <img src={heraImage} alt="Glass sculpture of Hera" className='w-[20rem] object-cover' />
+          </div>
+        </div>
       </Container>
     </>
   )
