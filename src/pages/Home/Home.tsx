@@ -38,8 +38,8 @@ const Home = () => {
       autoSplit: true,
       onSplit(self) {
         return gsap.from(self.words, {
-          duration: 2,
-          x: 2,
+          duration: 6,
+          x: 12,
           filter: 'blur(10px)',
           autoAlpha: 0,
           stagger: 0.1,
@@ -90,19 +90,22 @@ const Home = () => {
       }
     );
 
-    gsap.fromTo('.contact-link',
-      { autoAlpha: 0, y: 16 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        stagger: 0.15,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.contact-link',
-          start: "top 65%",
-          toggleActions: "play none none none"
+    gsap.utils.toArray('.contact-link').forEach((link, i) => {
+      gsap.fromTo(link as Element,
+        { autoAlpha: 0, y: 16 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          ease: 'power2.out',
+          duration: 1 + i * 0.4,
+          scrollTrigger: {
+            trigger: link as Element,
+            start: "top 70%",
+            toggleActions: "play none none none",
+          }
         }
-      });
+      );
+    });
   }, { dependencies: [show, load] })
 
   const contactLinks = [
@@ -118,7 +121,7 @@ const Home = () => {
 
         <div className='-m-6 -mb-[10rem] h-screen w-screen relative block'>
           <Spline
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202605261051"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606151114"
             onLoad={onLoad}
             onSplineFollow={onSplineFollow}
           />
