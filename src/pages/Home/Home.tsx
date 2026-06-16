@@ -128,9 +128,10 @@ const Home = () => {
         <div className='py-20 flex justify-center'>
           <div className='intro max-w-3xl w-full'>
             <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
-            <div className='intro-content text-5xl font-serif leading-tight'>
-              <p>I design and build softwares and websites that combine <i>functionality</i> and <i>creativity</i> from idea to implementation.</p>
-              <p>My work is driven by a passion for solving real-world problems with <i>elegant, maintainable solutions</i>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
+            <div className='intro-content text-[2.5rem] xl:text-5xl font-serif leading-tight'>
+              <p>I design and build softwares and websites that combine <span className='italic font-medium text-black'>functionality</span> and <span className='italic font-medium text-black'>creativity</span> from idea to implementation.</p>
+              <p><br /></p>
+              <p>My work is driven by a passion for solving real-world problems with <span className='italic font-medium text-black'>elegant and maintainable solutions</span>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
             </div>
           </div>
         </div>
@@ -171,7 +172,7 @@ const Home = () => {
         </div>
 
         <div className='mt-20 pt-10 text-center flex flex-col justify-center items-center gap-4'>
-          <p className='font-serif text-md italic text-neutral-400'>
+          <p className='font-serif text-sm lg:text-md italic text-neutral-400'>
             There shall come a day with gusty winds to help cleave through the waves, <br />
             For me to make full sail and an open boundless sea navigate.
           </p>
