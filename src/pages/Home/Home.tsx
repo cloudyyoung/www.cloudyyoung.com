@@ -17,6 +17,11 @@ const Home = () => {
   const [load, setLoad] = useState(false);
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
   const onLoad = () => {
     setLoad(true);
   }
