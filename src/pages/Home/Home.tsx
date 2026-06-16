@@ -151,7 +151,7 @@ const Home = () => {
                 Let's work together — reach out and say hello.
               </div>
             </div>
-            <div className='contact-meta mt-2 mb-8 text-sm font-medium uppercase tracking-widest text-neutral-500 italic'>
+            <div className='contact-meta mt-4 mb-12 text-sm font-medium uppercase tracking-widest text-neutral-500 italic'>
               Calgary, Alberta, Canada &middot; {timezone} &middot; {now}
             </div>
             <div className='flex flex-col gap-4'>
@@ -171,7 +171,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='mt-20 pt-10 text-center flex flex-col justify-center items-center gap-4'>
+        <div className='mt-20 xl:pt-10 text-center flex flex-col justify-center items-center gap-4'>
           <p className='font-serif text-sm lg:text-md italic text-neutral-400'>
             There shall come a day with gusty winds to help cleave through the waves, <br />
             For me to make full sail and an open boundless sea navigate.
