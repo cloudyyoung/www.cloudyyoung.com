@@ -3,13 +3,13 @@ import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import SplitText from "gsap/SplitText";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from '@gsap/react';
 
 import Container from '../../components/Container';
 import Navbar from '../../components/Navbar';
 import { useTime } from '../../utils/useTime';
-import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText, ScrollTrigger, useGSAP);
 
 const Home = () => {
   const [now, timezone] = useTime();
@@ -72,33 +72,33 @@ const Home = () => {
       }
     });
 
-    gsap.from('.contact-meta', {
-      autoAlpha: 0,
-      y: 8,
-      filter: 'blur(6px)',
-      duration: 2,
-      scrollTrigger: {
-        trigger: '.contact-meta',
-        scrub: 1,
-        start: "clamp(top 70%)",
-        end: "clamp(bottom 60%)"
+    gsap.fromTo('.contact-meta',
+      { autoAlpha: 0, filter: 'blur(6px)' },
+      {
+        autoAlpha: 1,
+        filter: 'blur(0px)',
+        scrollTrigger: {
+          trigger: '.contact-meta',
+          scrub: 1,
+          start: "clamp(top 70%)",
+          end: "clamp(bottom 60%)"
+        }
       }
-    });
+    );
 
-    gsap.from('.contact-link', {
-      autoAlpha: 0,
-      y: 24,
-      duration: 6,
-      stagger: 2,
-      filter: 'blur(10px)',
-      scrollTrigger: {
-        trigger: '.contact-link',
-        scrub: 1,
-        start: "clamp(top 70%)",
-        end: "clamp(bottom 60%)"
-      }
-    });
-
+    gsap.fromTo('.contact-link',
+      { autoAlpha: 0, y: 16 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.contact-link',
+          start: "top 60%",
+          toggleActions: "play none none none"
+        }
+      });
   }, { dependencies: [show, load] })
 
   const contactLinks = [
@@ -148,7 +148,7 @@ const Home = () => {
               </div>
             </div>
             <div className='contact-meta mt-8 mb-12 text-sm font-medium uppercase tracking-widest text-neutral-400'>
-              Calgary Alberta, Canada &middot; {timezone} &middot; {now}
+              Calgary, Alberta, Canada &middot; {timezone} &middot; {now}
             </div>
             <div className='flex flex-col gap-4'>
               {contactLinks.map(({ label, href, display }) => (
