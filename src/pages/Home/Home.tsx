@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import gsap from 'gsap';
 import SplitText from "gsap/SplitText";
@@ -21,9 +21,17 @@ const Home = () => {
     setLoad(true);
   }
 
-  const onSplineFollow = () => {
+  const onSplineTriggered = () => {
     setShow(true);
   }
+
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [show])
 
   useGSAP(() => {
     gsap.to('.navbar', { y: -100, opacity: 0, duration: 0 })
@@ -39,7 +47,7 @@ const Home = () => {
       onSplit(self) {
         return gsap.from(self.words, {
           duration: 6,
-          x: 12,
+          x: 8,
           filter: 'blur(10px)',
           autoAlpha: 0,
           stagger: 0.1,
@@ -119,19 +127,20 @@ const Home = () => {
       <Container>
         {/* <Navbar title="" /> */}
 
-        <div className='-m-6 -mb-[10rem] h-screen w-screen relative block'>
+        <div className='-m-6 -mb-[6rem] h-screen w-screen relative block overflow-hidden'>
           <Spline
-            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606151114"
+            scene="https://prod.spline.design/gRfKGXVN9abIjknz/scene.splinecode?202606160137"
             onLoad={onLoad}
-            onSplineFollow={onSplineFollow}
+            onSplineFollow={onSplineTriggered}
+            onSplineMouseHover={onSplineTriggered}
           />
           <div className='bg-white absolute right-0 bottom-0 w-40 h-14 pointer-events-none'></div>
         </div>
 
-        <div className='py-20 flex justify-center'>
+        <div className='py-24 flex justify-center'>
           <div className='intro max-w-3xl w-full'>
             <div className='intro-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Introduction</div>
-            <div className='intro-content text-[2.5rem] xl:text-5xl font-serif leading-tight'>
+            <div className='intro-content text-4xl xl:text-5xl font-serif leading-tight'>
               <p>I design and build softwares and websites that combine <span className='italic font-medium text-black'>functionality</span> and <span className='italic font-medium text-black'>creativity</span> from idea to implementation.</p>
               <p><br /></p>
               <p>My work is driven by a passion for solving real-world problems with <span className='italic font-medium text-black'>elegant and maintainable solutions</span>, and I enjoy collaborating closely with others to bring ambitious ideas to life through code.</p>
@@ -146,11 +155,11 @@ const Home = () => {
           <KeywordButton className='-mr-48'>Projects</KeywordButton>
         </div> */}
 
-        <div className='py-20 flex justify-center'>
+        <div className='py-24 flex justify-center'>
           <div className='max-w-3xl w-full'>
             <div className='contact mt-8'>
               <div className='contact-label text-sm font-medium uppercase tracking-widest text-neutral-400 mb-8'>Contact</div>
-              <div className='contact-content text-4xl font-serif leading-tight'>
+              <div className='contact-content text-3xl lg:text-4xl font-serif leading-tight'>
                 Let's work together — reach out and say hello.
               </div>
             </div>
@@ -174,14 +183,14 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='mt-20 xl:pt-10 text-center flex flex-col justify-center items-center gap-4'>
+        <div className='mt-24 xl:pt-10 text-center flex flex-col justify-center items-center gap-4'>
           <p className='font-serif text-sm lg:text-md italic text-neutral-400'>
             There shall come a day with gusty winds to help cleave through the waves, <br />
             For me to make full sail and an open boundless sea navigate.
           </p>
 
           <div className='w-full flex flex-row justify-center items-center'>
-            <img src={heraImage} alt="Glass sculpture of Hera" className='w-[20rem] object-cover' />
+            <img src={heraImage} alt="Glass sculpture of Hera" className='w-[20rem] object-cover sticky bottom-0' />
           </div>
         </div>
       </Container>
